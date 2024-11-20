@@ -33,3 +33,8 @@ def client_nombre_chaines(client: str, chaines: list[dict]) -> int:
             compte += 1
 
     return compte
+
+
+@register.filter
+def sub(number: int, amount: int) -> int:
+    return number - amount

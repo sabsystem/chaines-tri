@@ -126,6 +126,12 @@ td {
 #gestion-boutons {
     display: flex;
     justify-content: space-between;
+    font-size: 15px;
+}
+
+#filtre {
+    padding: 10px 20px;
+    border-radius: 5px;
 }
 
 /* Formulaires */

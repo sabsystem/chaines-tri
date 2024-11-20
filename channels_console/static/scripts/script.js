@@ -91,6 +91,10 @@ function fermer_formulaire(id_formulaire) {
     formulaire.style.display = "none";
 }
 
+window.onclick = function (event) {
+    if (event.target.classList.contains('formulaire')) fermer_formulaire(event.target.id);
+}
+
 // Fonctionnement du drag en drop pour le déplacement des chaînes
 const zoneTri = document.getElementById("zone-tri");
 let selectedElement;

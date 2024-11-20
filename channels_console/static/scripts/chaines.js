@@ -37,8 +37,33 @@ async function ajouter_clients(id_formulaire) {
     window.location.reload();
 }
 
-window.onclick = function (event) {
-    const formulaire = document.getElementById('ajout-client');
+async function ouvrir_formulaire_deplacement(id, chaine) {
+    ouvrir_formulaire(id);
 
-    if (event.target === formulaire) fermer_formulaire('ajout-client');
+    const elementChaine = document.getElementById("chaine-a-deplacer");
+    elementChaine.textContent = chaine;
+}
+
+async function deplacer_chaine(id_formulaire) {
+    const formulaire = document.getElementById(id_formulaire);
+
+    const idChaine = document.getElementById("chaine-a-deplacer").textContent;
+
+    const zoneTri = document.getElementById("zone-tri");
+    const elementsTri = Array.from(zoneTri.querySelectorAll(".element-tri"));
+
+    const position = elementsTri.findIndex(e => e.id === idChaine);
+    const nouvellePosition = Number(document.getElementById("nouvelle-position").value);
+
+    const elementDeplace = elementsTri.splice(position, 1)[0];
+    elementsTri.splice(nouvellePosition, 0, elementDeplace);
+
+    zoneTri.innerHTML = "";
+    elementsTri.forEach((element, index) => {
+        const elementNumero = element.querySelector("#numero");
+        elementNumero.textContent = String(index);
+        zoneTri.appendChild(element);
+    });
+
+    formulaire.style.display = "none";
 }

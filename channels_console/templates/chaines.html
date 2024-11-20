@@ -39,6 +39,20 @@
         </div>
     </div>
 
+    <div id="deplacement-chaine" class="formulaire">
+        <div class="formulaire-contenu">
+            <span class="fermer-formulaire" onclick="fermer_formulaire('deplacement-chaine')">&times;</span>
+
+            <h1>Chaîne à Déplacer : <span id="chaine-a-deplacer">Aucune Chaîne Sélectionnée</span></h1>
+
+            <label>
+                <input id="nouvelle-position" type="number" min="0" max="{{ chaines|length|sub:1 }}" value="0">
+            </label>
+
+            <button id="deplacer-chaine" onclick="deplacer_chaine('deplacement-chaine')">Déplacer Chaîne</button>
+        </div>
+    </div>
+
     <h1>CHAÎNES : {{ chaines|length }} / ASSOCIÉES : {{ chaines|associations }}</h1>
 
     <div id="gestion-boutons">
@@ -46,6 +60,7 @@
             <button class="bouton" onclick="enregistrer()">Enregistrer</button>
             <button class="bouton" onclick="window.location.reload()">Réinitialiser</button>
             <button class="bouton" onclick="trier()">Trier</button>
+            <label><input id="filtre" type="text"></label>
             <button class="bouton" onclick="filtrer()">Filtrer</button>
         </div>
 
@@ -91,7 +106,8 @@
                     ondragstart="dragStart(this)"
                     ondragenter="dragEnter(this)"
                     ondragend="dragEnd(this)">
-                    <td id="numero">{{ forloop.counter0 }}</td>
+                    <td id="numero"
+                        ondblclick="ouvrir_formulaire_deplacement('deplacement-chaine', '{{ chaine.id }}')">{{ forloop.counter0 }}</td>
                     <td id="id" ondblclick="activerModification(this)">{{ chaine.id }}</td>
                     <td id="nom_github" ondblclick="activerModification(this)">{{ chaine.nom_github }}</td>
                     <td id="nom_mumu" ondblclick="activerModification(this)">{{ chaine.nom_mumu }}</td>
