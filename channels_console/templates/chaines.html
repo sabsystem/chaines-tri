@@ -6,16 +6,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Tri Chaînes</title>
+
     <link rel="stylesheet" type="text/css" href="{% static 'styles/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/chaines.css' %}">
 
     <script src="{% static 'scripts/script.js' %}" defer></script>
+    <script src="{% static 'scripts/chaines.js' %}" defer></script>
 </head>
 
 <body>
 {% include 'components/header.html' %}
 
 <main>
+    <div id="ajout-client" class="formulaire">
+        <div class="formulaire-contenu">
+            <span class="fermer-formulaire" onclick="fermer_formulaire('ajout-client')">&times;</span>
+
+            <h1>Clients à Ajouter : <span id="formulaire-chaine">Aucune Chaîne Sélectionnée</span></h1>
+
+            <div id="liste-clients">
+                {% for client in clients %}
+                    <div>
+                        <input id="{{ client }}" type="checkbox">
+                        <label for="{{ client }}">{{ client }}</label>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <button id="ajouter-clients" onclick="ajouter_clients('ajout-client')">Ajouter Clients</button>
+        </div>
+    </div>
+
     <h1>CHAÎNES : {{ chaines|length }} / ASSOCIÉES : {{ chaines|associations }}</h1>
 
     <div id="gestion-boutons">
@@ -82,7 +105,8 @@
                         ondblclick="activerModification(this)">{{ chaine.forcer_non_diffusion }}</td>
                     <td id="a_diffuser" ondblclick="activerModification(this)">{{ chaine.a_diffuser }}</td>
                     <td id="ip" ondblclick="activerModification(this)">{{ chaine.ip }}</td>
-                    <td id="clients" ondblclick="activerModification(this)">{{ chaine.clients|length }}</td>
+                    <td id="clients"
+                        ondblclick="ouvrir_formulaire_clients('ajout-client', '{{ chaine.nom_mumu }}')">{{ chaine.clients|length }}</td>
                     <td id="occurrences" ondblclick="activerModification(this)">{{ chaine.occurrences|length }}</td>
                 </tr>
             {% endfor %}

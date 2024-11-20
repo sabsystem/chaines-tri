@@ -1,0 +1,4 @@
+#liste-clients {
+    display: flex;
+    flex-direction: column;
+}
