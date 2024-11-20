@@ -9,7 +9,6 @@
     <title>Tri Chaînes</title>
 
     <link rel="stylesheet" type="text/css" href="{% static 'styles/style.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'styles/clients.css' %}">
 
     <script src="{% static 'scripts/script.js' %}" defer></script>
     <script src="{% static 'scripts/clients.js' %}" defer></script>
@@ -21,7 +20,7 @@
 <main>
     <div id="ajout-client" class="formulaire">
         <div class="formulaire-contenu">
-            <span class="fermer" onclick="fermer_formulaire('ajout-client')">&times;</span>
+            <span class="fermer-formulaire" onclick="fermer_formulaire('ajout-client')">&times;</span>
 
             <label for="nom-client">Nom du Client à Ajouter</label>
             <input type="text" id="nom-client" placeholder="Nom du client...">
