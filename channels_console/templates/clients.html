@@ -21,12 +21,12 @@
 <main>
     <div id="ajout-client" class="formulaire">
         <div class="formulaire-contenu">
-            <span class="fermer" onclick="fermer_formulaire()">&times;</span>
+            <span class="fermer" onclick="fermer_formulaire('ajout-client')">&times;</span>
 
             <label for="nom-client">Nom du Client à Ajouter</label>
             <input type="text" id="nom-client" placeholder="Nom du client...">
 
-            <button id="creer-client" onclick="creer_client()">Créer Client</button>
+            <button id="creer-client" onclick="creer_client('ajout-client')">Créer Client</button>
         </div>
     </div>
 
@@ -34,7 +34,7 @@
 
     <div id="gestion-boutons">
         <div>
-            <button class="bouton" onclick="nouveau_client()">Ajouter Client</button>
+            <button class="bouton" onclick="ouvrir_formulaire('ajout-client')">Ajouter Client</button>
             <button class="bouton" onclick="filtrer()">Filtrer</button>
         </div>
 

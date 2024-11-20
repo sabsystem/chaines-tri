@@ -1,14 +1,5 @@
-const formulaire = document.getElementById("ajout-client");
-
-function nouveau_client() {
-    formulaire.style.display = "block";
-}
-
-function fermer_formulaire() {
-    formulaire.style.display = "none";
-}
-
-async function creer_client() {
+async function creer_client(id_formulaire) {
+    const formulaire = document.getElementById(id_formulaire);
     const nom = document.getElementById("nom-client").value;
 
     await fetch(`/api/clients/ajouter`, {
@@ -25,6 +16,8 @@ async function creer_client() {
 }
 
 window.onclick = function (event) {
+    const formulaire = document.getElementById('ajout-client');
+
     if (event.target === formulaire)
-        fermer_formulaire();
+        fermer_formulaire('ajout-client');
 }

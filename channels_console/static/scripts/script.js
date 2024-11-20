@@ -80,6 +80,17 @@ async function activerModification(element) {
     }
 }
 
+// Gestion des formulaires
+function ouvrir_formulaire(id_formulaire) {
+    const formulaire = document.getElementById(id_formulaire);
+    formulaire.style.display = "block";
+}
+
+function fermer_formulaire(id_formulaire) {
+    const formulaire = document.getElementById(id_formulaire);
+    formulaire.style.display = "none";
+}
+
 // Fonctionnement du drag en drop pour le déplacement des chaînes
 const zoneTri = document.getElementById("zone-tri");
 let selectedElement;
