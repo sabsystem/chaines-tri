@@ -1,0 +1,748 @@
+{
+  "channels": [
+    {
+      "name": "TF1",
+      "id": 1,
+      "url": "rtp://@239.100.14.5:1234",
+      "server": "172.16.2.20:4014",
+      "tags": [
+        {
+          "country": "fr"
+        },
+        {
+          "language": "fr"
+        },
+        {
+          "nature": "general interest"
+        },
+        {
+          "public": "all ages"
+        },
+        {
+          "media": "tv"
+        }
+      ],
+      "icon": "tf1"
+    },
+    {
+      "name": "France 2",
+      "id": 2,
+      "url": "rtp://@239.100.10.1:1234",
+      "server": "172.16.2.20:4010",
+      "tags": [
+        {
+          "country": "fr"
+        },
+        {
+          "language": "fr"
+        },
+        {
+          "nature": "general interest"
+        },
+        {
+          "public": "all ages"
+        },
+        {
+          "media": "tv"
+        }
+      ],
+      "icon": "france2"
+    },
+    {
+      "name": "France 3",
+      "id": 3,
+      "url": "rtp://@239.100.10.2:1234",
+      "server": "172.16.2.20:4010",
+      "tags": [
+        {
+          "country": "fr"
+        },
+        {
+          "language": "fr"
+        },
+        {
+          "nature": "general interest"
+        },
+        {
+          "public": "all ages"
+        },
+        {
+          "media": "tv"
+        }
+      ],
+      "icon": "france3"
+    },
+    {
+      "name": "Canal+",
+      "id": 4,
+      "url": "rtp://@239.100.12.1:1234",
+      "server": "172.16.2.20:4012",
+      "tags": [
+        {
+          "country": "fr"
+        },
+        {
+          "language": "fr"
+        },
+        {
+          "nature": "general interest"
+        },
+        {
+          "public": "all ages"
+        },
+        {
+          "media": "tv"
+        }
+      ],
+      "icon": "canalplus"
+    },
+    {
+      "name": "France 5",
+      "id": 5,
+      "url": "rtp://@239.100.13.3:1234",
+      "server": "172.16.2.20:4013",
+      "tags": [
+        {
+          "country": "fr"
+        },
+        {
+          "language": "fr"
+        },
+        {
+          "nature": "general interest"
+        },
+        {
+          "public": "all ages"
+        },
+        {
+          "media": "tv"
+        }
+      ],
+      "icon": "france5"
+    },
+    {
+      "name": "M6",
+      "id": 6,
+      "url": "rtp://@239.100.13.4:1234",
+      "server": "172.16.2.20:4013",
+      "tags": [
+        {
+          "country": "fr"
+        },
+        {
+          "language": "fr"
+        },
+        {
+          "nature": "general interest"
+        },
+        {
+          "public": "all ages"
+        },
+        {
+          "media": "tv"
+        }
+      ],
+      "icon": "m6"
+    },
+    {
+      "name": "ARTE",
+      "id": 7,
+      "url": "rtp://@239.100.13.2:1234",
+      "server": "172.16.2.22:4013",
+      "tags": [
+        {
+          "country": "fr"
+        },
+        {
+          "language": "fr"
+        },
+        {
+          "nature": "general interest"
+        },
+        {
+          "public": "all ages"
+        },
+        {
+          "media": "tv"
+        }
+      ],
+      "icon": "arte"
+    },
+    {
+      "name": "C8",
+      "id": 8,
+      "url": "rtp://@239.100.11.2:1234",
+      "server": "172.16.2.20:4011",
+      "tags": [
+        {
+          "country": "fr"
+        },
+        {
+          "language": "fr"
+        },
+        {
+          "nature": "general interest"
+        },
+        {
+          "public": "all ages"
+        },
+        {
+          "media": "tv"
+        }
+      ],
+      "icon": "c8"
+    },
+    {
+      "name": "W9",
+      "id": 9,
+      "url": "rtp://@239.100.13.5:1234",
+      "server": "172.16.2.20:4013",
+      "tags": [
+        {
+          "country": "fr"
+        },
+        {
+          "language": "fr"
+        },
+        {
+          "nature": "general interest"
+        },
+        {
+          "public": "all ages"
+        },
+        {
+          "media": "tv"
+        }
+      ],
+      "icon": "w9"
+    },
+    {
+      "name": "TMC",
+      "id": 10,
+      "url": "rtp://@239.100.14.4:1234",
+      "server": "172.16.2.20:4014",
+      "tags": [
+        {
+          "country": "fr"
+        },
+        {
+          "language": "fr"
+        },
+        {
+          "nature": "general interest"
+        },
+        {
+          "public": "all ages"
+        },
+        {
+          "media": "tv"
+        }
+      ],
+      "icon": "tmc"
+    },
+    {
+      "name": "TFX",
+      "id": 11,
+      "url": "rtp://@239.100.14.2:1234",
+      "server": "172.16.2.20:4014",
+      "tags": [
+        {
+          "country": "fr"
+        },
+        {
+          "language": "fr"
+        },
+        {
+          "nature": "general interest"
+        },
+        {
+          "public": "all ages"
+        },
+        {
+          "media": "tv"
+        }
+      ],
+      "icon": "tfx"
+    },
+    {
+      "name": "NRJ12",
+      "id": 12,
+      "url": "rtp://@239.100.14.3:1234",
+      "server": "172.16.2.20:4014",
+      "tags": [
+        {
+          "country": "fr"
+        },
+        {
+          "language": "fr"
+        },
+        {
+          "nature": "general interest"
+        },
+        {
+          "public": "all ages"
+        },
+        {
+          "media": "tv"
+        }
+      ],
+      "icon": "nrj12"
+    },
+    {
+      "name": "LCP",
+      "id": 13,
+      "url": "rtp://@239.100.14.1:1234",
+      "server": "172.16.2.20:4014",
+      "tags": [
+        {
+          "country": "fr"
+        },
+        {
+          "language": "fr"
+        },
+        {
+          "nature": "politics"
+        },
+        {
+          "public": "all ages"
+        },
+        {
+          "media": "tv"
+        }
+      ],
+      "icon": "lcp"
+    },
+    {
+      "name": "France 4",
+      "id": 14,
+      "url": "rtp://@239.100.10.3:1234",
+      "server": "172.16.2.20:4010",
+      "tags": [
+        {
+          "country": "fr"
+        },
+        {
+          "language": "fr"
+        },
+        {
+          "nature": "general interest"
+        },
+        {
+          "public": "all ages"
+        },
+        {
+          "media": "tv"
+        }
+      ],
+      "icon": "france4"
+    },
+    {
+      "name": "BFM TV",
+      "id": 15,
+      "url": "rtp://@239.100.11.1:1234",
+      "server": "172.16.2.20:4011",
+      "tags": [
+        {
+          "country": "fr"
+        },
+        {
+          "language": "fr"
+        },
+        {
+          "nature": "news"
+        },
+        {
+          "public": "all ages"
+        },
+        {
+          "media": "tv"
+        }
+      ],
+      "icon": "bfmtv"
+    },
+    {
+      "name": "CNews",
+      "id": 16,
+      "url": "rtp://@239.100.11.5:1234",
+      "server": "172.16.2.20:4011",
+      "tags": [
+        {
+          "country": "fr"
+        },
+        {
+          "language": "fr"
+        },
+        {
+          "nature": "news"
+        },
+        {
+          "public": "all ages"
+        },
+        {
+          "media": "tv"
+        }
+      ],
+      "icon": "cnews"
+    },
+    {
+      "name": "CSTAR",
+      "id": 17,
+      "url": "rtp://@239.100.11.3:1234",
+      "server": "172.16.2.20:4011",
+      "tags": [
+        {
+          "country": "fr"
+        },
+        {
+          "language": "fr"
+        },
+        {
+          "nature": "music"
+        },
+        {
+          "public": "all ages"
+        },
+        {
+          "media": "tv"
+        }
+      ],
+      "icon": "cstar"
+    },
+    {
+      "name": "Gulli",
+      "id": 18,
+      "url": "rtp://@239.100.11.4:1234",
+      "server": "172.16.2.20:4011",
+      "tags": [
+        {
+          "country": "fr"
+        },
+        {
+          "language": "fr"
+        },
+        {
+          "nature": "youth"
+        },
+        {
+          "public": "youth"
+        },
+        {
+          "media": "tv"
+        }
+      ],
+      "icon": "gulli"
+    },
+    {
+      "name": "Culturebox",
+      "id": 19,
+      "url": "rtp://@239.100.10.5:1234",
+      "server": "172.16.2.20:4010",
+      "tags": [
+        {
+          "country": "fr"
+        },
+        {
+          "language": "fr"
+        },
+        {
+          "nature": "general interest"
+        },
+        {
+          "public": "all ages"
+        },
+        {
+          "media": "tv"
+        }
+      ],
+      "icon": "culturebox"
+    },
+    {
+      "name": "TF1 séries films",
+      "id": 20,
+      "url": "rtp://@239.100.15.2:1234",
+      "server": "172.16.2.20:4015",
+      "tags": [
+        {
+          "country": "fr"
+        },
+        {
+          "language": "fr"
+        },
+        {
+          "nature": "general interest"
+        },
+        {
+          "public": "all ages"
+        },
+        {
+          "media": "tv"
+        }
+      ],
+      "icon": "tf1_series_films"
+    },
+    {
+      "name": "L équipe 21",
+      "id": 21,
+      "url": "rtp://@239.100.15.3:1234",
+      "server": "172.16.2.20:4015",
+      "tags": [
+        {
+          "country": "fr"
+        },
+        {
+          "language": "fr"
+        },
+        {
+          "nature": "general interest"
+        },
+        {
+          "public": "all ages"
+        },
+        {
+          "media": "tv"
+        }
+      ],
+      "icon": "lequipe21"
+    },
+    {
+      "name": "6ter",
+      "id": 22,
+      "url": "rtp://@239.100.13.1:1234",
+      "server": "172.16.2.20:4013",
+      "tags": [
+        {
+          "country": "fr"
+        },
+        {
+          "language": "fr"
+        },
+        {
+          "nature": "general interest"
+        },
+        {
+          "public": "all ages"
+        },
+        {
+          "media": "tv"
+        }
+      ],
+      "icon": "6ter"
+    },
+    {
+      "name": "RMC Story",
+      "id": 23,
+      "url": "rtp://@239.100.15.4:1234",
+      "server": "172.16.2.20:4015",
+      "tags": [
+        {
+          "country": "fr"
+        },
+        {
+          "language": "fr"
+        },
+        {
+          "nature": "general interest"
+        },
+        {
+          "public": "all ages"
+        },
+        {
+          "media": "tv"
+        }
+      ],
+      "icon": "nologo"
+    },
+    {
+      "name": "RMC DECOUVERTES",
+      "id": 24,
+      "url": "rtp://@239.100.15.5:1234",
+      "server": "172.16.2.20:4015",
+      "tags": [
+        {
+          "country": "fr"
+        },
+        {
+          "language": "fr"
+        },
+        {
+          "nature": "general interest"
+        },
+        {
+          "public": "all ages"
+        },
+        {
+          "media": "tv"
+        }
+      ],
+      "icon": "rmcdecouvertes"
+    },
+    {
+      "name": "Chérie 25",
+      "id": 25,
+      "url": "rtp://@239.100.15.1:1234",
+      "server": "172.16.2.20:4015",
+      "tags": [
+        {
+          "country": "fr"
+        },
+        {
+          "language": "fr"
+        },
+        {
+          "nature": "general interest"
+        },
+        {
+          "public": "all ages"
+        },
+        {
+          "media": "tv"
+        }
+      ],
+      "icon": "cherie25"
+    },
+    {
+      "name": "LCI",
+      "id": 26,
+      "url": "rtp://@239.100.12.3:1234",
+      "server": "172.16.2.20:4012",
+      "tags": [
+        {
+          "country": "fr"
+        },
+        {
+          "language": "fr"
+        },
+        {
+          "nature": "politics"
+        },
+        {
+          "public": "all ages"
+        },
+        {
+          "media": "tv"
+        }
+      ],
+      "icon": "LCI"
+    },
+    {
+      "name": "France Info",
+      "id": 27,
+      "url": "rtp://@239.100.10.6:1234",
+      "server": "172.16.2.20:4010",
+      "tags": [
+        {
+          "country": "fr"
+        },
+        {
+          "language": "fr"
+        },
+        {
+          "nature": "news"
+        },
+        {
+          "public": "all ages"
+        },
+        {
+          "media": "tv"
+        }
+      ],
+      "icon": "franceinfo"
+    },
+    {
+      "name": "BFM Business Paris",
+      "id": 28,
+      "url": "rtp://@239.100.10.4:1234",
+      "server": "172.16.2.20:4010",
+      "tags": [
+        {
+          "country": "fr"
+        },
+        {
+          "language": "fr"
+        },
+        {
+          "nature": "economics"
+        },
+        {
+          "public": "all ages"
+        },
+        {
+          "media": "tv"
+        }
+      ],
+      "icon": "BFM_BUSINESS"
+    },
+    {
+      "name": "Canal 31",
+      "id": 29,
+      "url": "rtp://@239.100.16.1:1234",
+      "server": "172.16.2.20:4016",
+      "tags": [
+        {
+          "country": "fr"
+        },
+        {
+          "language": "fr"
+        },
+        {
+          "nature": "general interest"
+        },
+        {
+          "public": "all ages"
+        },
+        {
+          "media": "tv"
+        }
+      ],
+      "icon": "nologo"
+    },
+    {
+      "name": "IDF1",
+      "id": 30,
+      "url": "rtp://@239.100.16.2:1234",
+      "server": "172.16.2.20:4016",
+      "tags": [
+        {
+          "country": "fr"
+        },
+        {
+          "language": "fr"
+        },
+        {
+          "nature": "general interest"
+        },
+        {
+          "public": "all ages"
+        },
+        {
+          "media": "tv"
+        }
+      ],
+      "icon": "idf1"
+    },
+    {
+      "name": "Vià Grand Paris",
+      "id": 31,
+      "url": "rtp://@239.100.16.4:1234",
+      "server": "172.16.2.20:4016",
+      "tags": [
+        {
+          "country": "fr"
+        },
+        {
+          "language": "fr"
+        },
+        {
+          "nature": "general interest"
+        },
+        {
+          "public": "all ages"
+        },
+        {
+          "media": "tv"
+        }
+      ],
+      "icon": "viagrandparis"
+    }
+  ]
+}

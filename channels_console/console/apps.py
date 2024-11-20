@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class ChainesConfig(AppConfig):
+class ConsoleConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'chaines'
+    name = 'console'

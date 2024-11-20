@@ -1,0 +1,822 @@
+{
+  "SAT1": {
+    "ip": "172.16.2.1",
+    "adapteurs": {
+      "0": {
+        "satellite": "42.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "1": {
+        "satellite": "42.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "2": {
+        "satellite": "42.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "3": {
+        "satellite": "42.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "4": {
+        "satellite": "42.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "5": {
+        "satellite": "42.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "6": {
+        "satellite": "42.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "7": {
+        "satellite": "42.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "8": {
+        "satellite": "42.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "9": {
+        "satellite": "42.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "10": {
+        "satellite": "42.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "11": {
+        "satellite": "42.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "12": {
+        "satellite": "42.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "13": {
+        "satellite": "42.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "14": {
+        "satellite": "42.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "15": {
+        "satellite": "42.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "16": {
+        "satellite": "42.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "17": {
+        "satellite": "42.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "18": {
+        "satellite": "42.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "19": {
+        "satellite": "42.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "20": {
+        "satellite": "42.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "21": {
+        "satellite": "42.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "22": {
+        "satellite": "42.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "23": {
+        "satellite": "42.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "24": {
+        "satellite": "42.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "25": {
+        "satellite": "42.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "26": {
+        "satellite": "42.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "27": {
+        "satellite": "42.0\u00b0E",
+        "frequence": "Aucune"
+      }
+    }
+  },
+  "SAT2": {
+    "ip": "172.16.2.2",
+    "adapteurs": {
+      "0": {
+        "satellite": "13.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "1": {
+        "satellite": "13.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "2": {
+        "satellite": "13.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "3": {
+        "satellite": "13.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "4": {
+        "satellite": "13.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "5": {
+        "satellite": "13.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "6": {
+        "satellite": "13.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "7": {
+        "satellite": "13.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "8": {
+        "satellite": "13.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "9": {
+        "satellite": "13.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "10": {
+        "satellite": "13.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "11": {
+        "satellite": "13.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "12": {
+        "satellite": "13.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "13": {
+        "satellite": "13.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "14": {
+        "satellite": "13.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "15": {
+        "satellite": "13.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "16": {
+        "satellite": "13.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "17": {
+        "satellite": "13.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "18": {
+        "satellite": "13.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "19": {
+        "satellite": "13.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "20": {
+        "satellite": "13.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "21": {
+        "satellite": "13.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "22": {
+        "satellite": "13.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "23": {
+        "satellite": "13.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "24": {
+        "satellite": "13.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "25": {
+        "satellite": "13.0\u00b0E",
+        "frequence": "Aucune"
+      }
+    }
+  },
+  "SAT3": {
+    "ip": "172.16.2.3",
+    "adapteurs": {
+      "0": {
+        "satellite": "13.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "1": {
+        "satellite": "13.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "2": {
+        "satellite": "13.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "3": {
+        "satellite": "13.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "4": {
+        "satellite": "13.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "5": {
+        "satellite": "13.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "6": {
+        "satellite": "13.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "7": {
+        "satellite": "13.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "8": {
+        "satellite": "13.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "9": {
+        "satellite": "13.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "10": {
+        "satellite": "13.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "11": {
+        "satellite": "13.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "12": {
+        "satellite": "13.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "13": {
+        "satellite": "13.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "14": {
+        "satellite": "13.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "15": {
+        "satellite": "13.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "16": {
+        "satellite": "13.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "17": {
+        "satellite": "13.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "18": {
+        "satellite": "13.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "19": {
+        "satellite": "13.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "20": {
+        "satellite": "13.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "21": {
+        "satellite": "13.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "22": {
+        "satellite": "13.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "23": {
+        "satellite": "13.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "24": {
+        "satellite": "13.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "25": {
+        "satellite": "13.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "26": {
+        "satellite": "13.0\u00b0E",
+        "frequence": "Aucune"
+      }
+    }
+  },
+  "SAT4": {
+    "ip": "172.16.2.4",
+    "adapteurs": {
+      "0": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "1": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "2": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "3": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "4": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "5": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "6": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "7": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "8": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "9": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "10": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "11": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "12": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "13": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "14": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "15": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "16": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "17": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "18": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "19": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "20": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "21": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "22": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "23": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "24": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "25": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "26": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "27": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "28": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "29": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      }
+    }
+  },
+  "SAT5": {
+    "ip": "172.16.2.5",
+    "adapteurs": {
+      "0": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "1": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "2": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "3": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "4": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "5": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "6": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "7": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "8": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "9": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "10": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "11": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "12": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "13": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "14": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "15": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "16": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "17": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "18": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "19": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "20": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "21": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "22": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "23": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "24": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "25": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "26": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "27": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "28": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "29": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      }
+    }
+  },
+  "SAT6": {
+    "ip": "172.16.2.6",
+    "adapteurs": {
+      "0": {
+        "satellite": "28.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "1": {
+        "satellite": "28.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "2": {
+        "satellite": "28.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "3": {
+        "satellite": "28.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "4": {
+        "satellite": "28.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "5": {
+        "satellite": "28.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "6": {
+        "satellite": "28.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "7": {
+        "satellite": "28.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "8": {
+        "satellite": "28.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "9": {
+        "satellite": "28.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "10": {
+        "satellite": "28.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "11": {
+        "satellite": "28.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "12": {
+        "satellite": "28.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "13": {
+        "satellite": "28.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "14": {
+        "satellite": "28.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "15": {
+        "satellite": "28.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "16": {
+        "satellite": "28.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "17": {
+        "satellite": "28.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "18": {
+        "satellite": "28.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "19": {
+        "satellite": "28.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "20": {
+        "satellite": "28.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "21": {
+        "satellite": "28.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "22": {
+        "satellite": "28.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "23": {
+        "satellite": "28.2\u00b0E",
+        "frequence": "Aucune"
+      }
+    }
+  },
+  "SAT7": {
+    "ip": "172.16.2.7",
+    "adapteurs": {
+      "0": {
+        "satellite": "28.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "1": {
+        "satellite": "28.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "2": {
+        "satellite": "28.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "3": {
+        "satellite": "28.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "4": {
+        "satellite": "28.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "5": {
+        "satellite": "28.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "6": {
+        "satellite": "28.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "7": {
+        "satellite": "28.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "8": {
+        "satellite": "28.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "9": {
+        "satellite": "28.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "10": {
+        "satellite": "28.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "11": {
+        "satellite": "28.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "12": {
+        "satellite": "28.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "13": {
+        "satellite": "28.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "14": {
+        "satellite": "28.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "15": {
+        "satellite": "28.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "16": {
+        "satellite": "28.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "17": {
+        "satellite": "28.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "18": {
+        "satellite": "28.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "19": {
+        "satellite": "28.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "20": {
+        "satellite": "28.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "21": {
+        "satellite": "28.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "22": {
+        "satellite": "28.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "23": {
+        "satellite": "28.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "24": {
+        "satellite": "28.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "25": {
+        "satellite": "28.2\u00b0E",
+        "frequence": "Aucune"
+      }
+    }
+  },
+  "SAT-SCAN": {
+    "ip": "172.16.3.96",
+    "adapteurs": {
+      "5": {
+        "satellite": "13.0\u00b0E",
+        "frequence": "Aucune"
+      },
+      "4": {
+        "satellite": "19.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "1": {
+        "satellite": "28.2\u00b0E",
+        "frequence": "Aucune"
+      },
+      "0": {
+        "satellite": "42.0\u00b0E",
+        "frequence": "Aucune"
+      }
+    }
+  }
+}

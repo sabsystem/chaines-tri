@@ -1,0 +1,94 @@
+{% load static %}
+{% load filters %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tri Chaînes</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/style.css' %}">
+
+    <script src="{% static 'scripts/script.js' %}" defer></script>
+</head>
+
+<body>
+{% include 'components/header.html' %}
+
+<main>
+    <h1>CHAÎNES : {{ chaines|length }} / ASSOCIÉES : {{ chaines|associations }}</h1>
+
+    <div id="gestion-boutons">
+        <div>
+            <button class="bouton" onclick="enregistrer()">Enregistrer</button>
+            <button class="bouton" onclick="window.location.reload()">Réinitialiser</button>
+            <button class="bouton" onclick="trier()">Trier</button>
+            <button class="bouton" onclick="filtrer()">Filtrer</button>
+        </div>
+
+        <div>
+            <button class="bouton" onclick="pageAvant()"><<</button>
+            <label for="chaines-visibles">0-49</label>
+            <select class="bouton" id="chaines-visibles" oninput="changerPage()">
+                {% for option in chaines|length|contenu_pages %}
+                    <option value="{{ option }}">{{ option }}</option>
+                {% endfor %}
+            </select>
+            <button class="bouton" onclick="pageApres()">>></button>
+        </div>
+    </div>
+
+    <section>
+        <table>
+            <thead>
+            <tr>
+                <th>Numéro</th>
+                <th>ID Github</th>
+                <th>Nom</th>
+                <th>Nom Mumu</th>
+                <th>Pays</th>
+                <th>Langue</th>
+                <th>Catégorie</th>
+                <th>Media</th>
+                <th>Adulte</th>
+                <th>Forcer Diffusion</th>
+                <th>Forcer Non-Diffusion</th>
+                <th>À Diffuser</th>
+                <th>IP</th>
+                <th>Clients</th>
+                <th>Occurences</th>
+            </tr>
+            </thead>
+
+            <tbody id="zone-tri">
+            {% for chaine in chaines %}
+                <tr id="{{ chaine.id }}"
+                    class="chaine"
+                    draggable="true"
+                    ondragstart="dragStart(this)"
+                    ondragenter="dragEnter(this)"
+                    ondragend="dragEnd(this)">
+                    <td id="numero" ondblclick="activerModification(this)">{{ forloop.counter0 }}</td>
+                    <td id="id" ondblclick="activerModification(this)">{{ chaine.id }}</td>
+                    <td id="nom_github" ondblclick="activerModification(this)">{{ chaine.nom_github }}</td>
+                    <td id="nom_mumu" ondblclick="activerModification(this)">{{ chaine.nom_mumu }}</td>
+                    <td id="pays" ondblclick="activerModification(this)">{{ chaine.pays }}</td>
+                    <td id="langue" ondblclick="activerModification(this)">{{ chaine.langue }}</td>
+                    <td id="categorie" ondblclick="activerModification(this)">{{ chaine.categorie }}</td>
+                    <td id="media" ondblclick="activerModification(this)">{{ chaine.media }}</td>
+                    <td id="adulte" ondblclick="activerModification(this)">{{ chaine.adulte }}</td>
+                    <td id="forcer_diffusion" ondblclick="activerModification(this)">{{ chaine.forcer_diffusion }}</td>
+                    <td id="forcer_non_diffusion"
+                        ondblclick="activerModification(this)">{{ chaine.forcer_non_diffusion }}</td>
+                    <td id="a_diffuser" ondblclick="activerModification(this)">{{ chaine.a_diffuser }}</td>
+                    <td id="ip" ondblclick="activerModification(this)">{{ chaine.ip }}</td>
+                    <td id="clients" ondblclick="activerModification(this)">{{ chaine.clients|length }}</td>
+                    <td id="occurrences" ondblclick="activerModification(this)">{{ chaine.occurrences|length }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </section>
+</main>
+</body>
+</html>

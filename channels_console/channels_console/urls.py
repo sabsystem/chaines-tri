@@ -1,7 +1,6 @@
-from django.contrib import admin
-from django.urls import path
-from chaines.views import home
+from django.urls import path, include
+
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', home),
+    path('', include('console.urls')),
+    path('api/', include('api.urls')),
 ]

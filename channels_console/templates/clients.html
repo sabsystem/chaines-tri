@@ -1,0 +1,79 @@
+{% load static %}
+{% load filters %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tri Chaînes</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/clients.css' %}">
+
+    <script src="{% static 'scripts/script.js' %}" defer></script>
+    <script src="{% static 'scripts/clients.js' %}" defer></script>
+</head>
+
+<body>
+{% include 'components/header.html' %}
+
+<main>
+    <div id="ajout-client" class="formulaire">
+        <div class="formulaire-contenu">
+            <span class="fermer" onclick="fermer_formulaire()">&times;</span>
+
+            <label for="nom-client">Nom du Client à Ajouter</label>
+            <input type="text" id="nom-client" placeholder="Nom du client...">
+
+            <button id="creer-client" onclick="creer_client()">Créer Client</button>
+        </div>
+    </div>
+
+    <h1>CLIENTS : {{ clients|length }}</h1>
+
+    <div id="gestion-boutons">
+        <div>
+            <button class="bouton" onclick="nouveau_client()">Ajouter Client</button>
+            <button class="bouton" onclick="filtrer()">Filtrer</button>
+        </div>
+
+        <div>
+            <button class="bouton" onclick="pageAvant()"><<</button>
+            <label for="chaines-visibles">0-49</label>
+            <select class="bouton" id="chaines-visibles" oninput="changerPage()">
+                {% for option in clients|length|contenu_pages %}
+                    <option value="{{ option }}">{{ option }}</option>
+                {% endfor %}
+            </select>
+            <button class="bouton" onclick="pageApres()">>></button>
+        </div>
+    </div>
+
+    <section>
+        <table>
+            <thead>
+            <tr>
+                <th>Nom Client</th>
+                <th>Nombre Chaînes</th>
+            </tr>
+            </thead>
+
+            <tbody id="zone-tri">
+            {% for client in clients %}
+                <tr id="{{ chaine.id }}"
+                    class="chaine"
+                    draggable="true"
+                    ondragstart="dragStart(this)"
+                    ondragenter="dragEnter(this)"
+                    ondragend="dragEnd(this)">
+                    <td id="nom_client" ondblclick="activerModification(this)">{{ client }}</td>
+                    <td id="nombre_chaines">{{ client|client_nombre_chaines:chaines }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </section>
+</main>
+</body>
+</html>
