@@ -63,12 +63,12 @@
             <tbody id="zone-tri">
             {% for chaine in chaines %}
                 <tr id="{{ chaine.id }}"
-                    class="chaine"
+                    class="element-tri"
                     draggable="true"
                     ondragstart="dragStart(this)"
                     ondragenter="dragEnter(this)"
                     ondragend="dragEnd(this)">
-                    <td id="numero" ondblclick="activerModification(this)">{{ forloop.counter0 }}</td>
+                    <td id="numero">{{ forloop.counter0 }}</td>
                     <td id="id" ondblclick="activerModification(this)">{{ chaine.id }}</td>
                     <td id="nom_github" ondblclick="activerModification(this)">{{ chaine.nom_github }}</td>
                     <td id="nom_mumu" ondblclick="activerModification(this)">{{ chaine.nom_mumu }}</td>

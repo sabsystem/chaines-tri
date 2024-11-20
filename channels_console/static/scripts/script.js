@@ -109,12 +109,12 @@ function dragEnter(div) {
 function dragEnd(div) {
     div.classList.remove("deplacement");
 
-    const divChaines = zoneTri.querySelectorAll(".chaine");
+    const elementsTri = zoneTri.querySelectorAll(".element-tri");
 
     let numero = 0;
-    for (const chaine of divChaines) {
-        const numeroSpan = chaine.querySelector("#numero");
-        numeroSpan.textContent = String(numero);
+    for (const element of elementsTri) {
+        const elementNumero = element.querySelector("#numero");
+        elementNumero.textContent = String(numero);
         numero++;
     }
 }
