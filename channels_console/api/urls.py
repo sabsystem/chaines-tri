@@ -9,6 +9,8 @@ urlpatterns = [
     path("clients/chaine/<str:chaine>", views.clients_chaine, name="clients_chaine"),
     path("pays", views.pays, name="pays"),
     path("langues", views.langues, name="langues"),
+    path("iptv", views.iptv, name="iptv"),
+    path("chaines", views.chaines, name="chaines"),
 
     # Setters
     path("clients/ajouter", views.ajout_client, name="ajouter_client"),
