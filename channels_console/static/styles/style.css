@@ -99,6 +99,12 @@ th {
     border-bottom: 2px solid #ddd;
 }
 
+th span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 td {
     border-bottom: 1px solid #eee;
 }
@@ -129,7 +135,7 @@ td {
     font-size: 15px;
 }
 
-#filtre {
+.input {
     padding: 10px 20px;
     border-radius: 5px;
 }
@@ -154,6 +160,7 @@ td {
     margin: 5% auto;
     padding: 20px;
     border: 1px solid #888;
+    border-radius: 10px;
     width: 80%;
 }
 

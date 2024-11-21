@@ -9,6 +9,7 @@
 
     <title>Tri Chaînes</title>
 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded"/>
     <link rel="stylesheet" type="text/css" href="{% static 'styles/style.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'styles/chaines.css' %}">
 
@@ -35,7 +36,8 @@
                 {% endfor %}
             </div>
 
-            <button id="ajouter-clients" onclick="ajouter_clients('ajout-client')">Ajouter Clients</button>
+            <button class="bouton" id="ajouter-clients" onclick="ajouter_clients('ajout-client')">Ajouter Clients
+            </button>
         </div>
     </div>
 
@@ -46,10 +48,28 @@
             <h1>Chaîne à Déplacer : <span id="chaine-a-deplacer">Aucune Chaîne Sélectionnée</span></h1>
 
             <label>
-                <input id="nouvelle-position" type="number" min="0" max="{{ chaines|length|sub:1 }}" value="0">
+                <input id="nouvelle-position" class="input" type="number" min="0" max="{{ chaines|length|sub:1 }}"
+                       value="0">
             </label>
 
-            <button id="deplacer-chaine" onclick="deplacer_chaine('deplacement-chaine')">Déplacer Chaîne</button>
+            <button class="bouton" id="deplacer-chaine" onclick="deplacer_chaine('deplacement-chaine')">Déplacer
+                Chaîne
+            </button>
+        </div>
+    </div>
+
+    <div id="iptv-utilise" class="formulaire">
+        <div class="formulaire-contenu">
+            <span class="fermer-formulaire" onclick="fermer_formulaire('iptv-utilise')">&times;</span>
+
+            <h1>Chaîne : <span id="chaine-a-associer">Aucune Chaîne Sélectionnée</span></h1>
+            <h1>ID IPTV à Associer : <span id="iptv-a-associer">Aucun ID Sélectionné</span></h1>
+
+            <p>Cet ID GitHub est déjà associé à une chaîne Mumu. Que voulez-vous faire ? Fusionner une chaîne annulera
+                toutes modifications en cours.</p>
+
+            <button class="bouton" id="deplacer-chaine" onclick="fusionner_occurrences('iptv-utilise')">Fusionner les Occurrences</button>
+            <button class="bouton" id="deplacer-chaine" onclick="fermer_formulaire('iptv-utilise')">Annuler</button>
         </div>
     </div>
 
@@ -59,8 +79,7 @@
         <div>
             <button class="bouton" onclick="enregistrer()">Enregistrer</button>
             <button class="bouton" onclick="window.location.reload()">Réinitialiser</button>
-            <button class="bouton" onclick="trier()">Trier</button>
-            <label><input id="filtre" type="text"></label>
+            <label><input class="input" type="text"></label>
             <button class="bouton" onclick="filtrer()">Filtrer</button>
         </div>
 
@@ -80,7 +99,7 @@
         <table>
             <thead>
             <tr>
-                <th>Numéro</th>
+                <th><span>Numéro <span class="material-symbols-rounded"> arrow_drop_down </span></span></th>
                 <th>ID Github</th>
                 <th>Nom</th>
                 <th>Nom Mumu</th>
@@ -108,7 +127,7 @@
                     ondragend="dragEnd(this)">
                     <td id="numero"
                         ondblclick="ouvrir_formulaire_deplacement('deplacement-chaine', '{{ chaine.id }}')">{{ forloop.counter0 }}</td>
-                    <td id="id" ondblclick="activerModification(this)">{{ chaine.id }}</td>
+                    <td id="id" ondblclick="changer_id(this)">{{ chaine.id }}</td>
                     <td id="nom_github" ondblclick="activerModification(this)">{{ chaine.nom_github }}</td>
                     <td id="nom_mumu" ondblclick="activerModification(this)">{{ chaine.nom_mumu }}</td>
                     <td id="pays" ondblclick="activerModification(this)">{{ chaine.pays }}</td>

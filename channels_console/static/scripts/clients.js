@@ -14,10 +14,3 @@ async function creer_client(id_formulaire) {
 
     window.location.reload();
 }
-
-window.onclick = function (event) {
-    const formulaire = document.getElementById('ajout-client');
-
-    if (event.target === formulaire)
-        fermer_formulaire('ajout-client');
-}

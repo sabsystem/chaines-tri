@@ -19,7 +19,7 @@ def clients(request):
     with open("../res/liste_clients.json", "r") as json_file:
         liste_clients: list[str] = json.load(json_file)
 
-    # Envoi de la liste de categories à jour
+    # Envoi de la liste de clients à jour
     return JsonResponse(liste_clients, safe=False)
 
 
@@ -35,7 +35,7 @@ def clients_chaine(request, chaine: str):
     if informations_chaine is not None:
         liste_clients_chaine = informations_chaine["clients"]
 
-    # Envoi de la liste de categories à jour
+    # Envoi de la liste de clients de la chaîne à jour
     return JsonResponse(liste_clients_chaine, safe=False)
 
 
@@ -44,7 +44,7 @@ def pays(request):
     with open("../res/liste_pays.json", "r") as json_file:
         liste_pays: list[str] = json.load(json_file)
 
-    # Envoi de la liste de categories à jour
+    # Envoi de la liste de pays à jour
     return JsonResponse(liste_pays, safe=False)
 
 
@@ -58,8 +58,26 @@ def langues(request):
     for key, value in correspondance_langues.items():
         liste_langues.append(value)
 
-    # Envoi de la liste de categories à jour
+    # Envoi de la liste de langues à jour
     return JsonResponse(liste_langues, safe=False)
+
+
+def iptv(request):
+    # Ouverture du fichier json
+    with open("../gen/iptv.json", "r") as json_file:
+        liste_chaines: dict = json.load(json_file)
+
+    # Envoi de la liste de chaînes iptv à jour
+    return JsonResponse(liste_chaines, safe=False)
+
+
+def chaines(request):
+    # Ouverture du fichier json
+    with open("../gen/association.json", "r") as json_file:
+        liste_chaines: dict = json.load(json_file)
+
+    # Envoi de la liste de chaînes à jour
+    return JsonResponse(liste_chaines, safe=False)
 
 
 # Setters
