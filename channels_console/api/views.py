@@ -114,25 +114,27 @@ def ajout_clients_chaine(request):
 @csrf_exempt
 def suppression_client(request):
     if request.method == "POST":
-        data = json.loads(request.body)
-        nom = data.get("nom")
-
-        if not nom:
-            return JsonResponse({"error": "Nom non fourni"}, status=400)
-
         try:
-            with open("../res/liste_clients.json", "r") as json_file:
+            nom = json.loads(request.body).get("nom")
+            if not nom:
+                raise ValueError("Nom non fourni")
+
+            with open("../res/liste_clients.json", "r+") as json_file:
                 liste_clients = json.load(json_file)
+
+                # Vérifie si le client existe et le supprime
+                if nom in liste_clients:
+                    liste_clients.remove(nom)
+                    json_file.seek(0)
+                    json.dump(liste_clients, json_file, indent=4)
+                    json_file.truncate()
+                    return JsonResponse({"message": "Client supprimé avec succès"})
+                else:
+                    return JsonResponse({"error": "Client non trouvé"}, status=404)
+
+        except (json.JSONDecodeError, ValueError):
+            return JsonResponse({"error": "Nom non fourni ou données invalides"}, status=400)
         except FileNotFoundError:
             return JsonResponse({"error": "Fichier liste_clients.json introuvable"}, status=500)
-
-        # Vérifie si le client existe et le supprime
-        if nom in liste_clients:
-            liste_clients.remove(nom)
-            with open("../res/liste_clients.json", "w") as outfile:
-                outfile.write(json.dumps(liste_clients, indent=4))
-            return JsonResponse({"message": "Client supprimé avec succès"})
-        else:
-            return JsonResponse({"error": "Client non trouvé"}, status=404)
 
     return JsonResponse({"error": "Invalid request method"}, status=400)

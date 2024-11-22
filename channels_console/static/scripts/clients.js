@@ -22,22 +22,17 @@ window.onclick = function (event) {
         fermer_formulaire('ajout-client');
 }
 
-// Changer le nom de l'argument pour être cohérent
-async function supprimer_client(nom_du_client) {
+async function supprimer_client(nom_client) {
     try {
         const response = await fetch('/api/clients/supprimer', {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ nom: nom_du_client })
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ nom: nom_client })
         });
 
-        // Vérifier la réponse de l'API
         if (!response.ok) {
-            const errorData = await response.json();
-            console.error("Erreur lors de la suppression du client:", errorData.error);
-            alert(`Erreur : ${errorData.error}`);
+            const { error } = await response.json();
+            alert(`Erreur : ${error}`);
             return;
         }
 
@@ -48,4 +43,23 @@ async function supprimer_client(nom_du_client) {
         alert("Une erreur est survenue.");
     }
 }
+
+function telechargerCSV(clientNom) {
+    if (!clientNom) {
+        console.error("Le nom du client est introuvable.");
+        alert("Nom du client introuvable.");
+        return;
+    }
+
+    var csvContent = "Nom Client;Adresse IP;Port\n";
+    csvContent += `"${clientNom}";"adresse ip";"1234"\n`;
+
+    var blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = `${clientNom}.csv`;
+    a.click();
+}
+
 
