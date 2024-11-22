@@ -13,4 +13,5 @@ urlpatterns = [
     # Setters
     path("clients/ajouter", views.ajout_client, name="ajouter_client"),
     path("clients/ajouter/chaine", views.ajout_clients_chaine, name="ajouter_clients_chaine"),
+    path('clients/supprimer', views.suppression_client, name='suppression_client'),
 ]
