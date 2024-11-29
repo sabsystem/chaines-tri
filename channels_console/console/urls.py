@@ -7,4 +7,5 @@ urlpatterns = [
     path("chaines", views.chaines, name="chaines"),
     path("clients", views.clients, name="clients"),
     path("clients/<str:filtre>", views.clients, name="clients"),
+    path('pays/', views.pays, name='pays'),
 ]
