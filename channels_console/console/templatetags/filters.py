@@ -38,3 +38,10 @@ def client_nombre_chaines(client: str, chaines: list[dict]) -> int:
 @register.filter
 def sub(number: int, amount: int) -> int:
     return number - amount
+
+
+@register.filter
+def chaine_par_defaut(pays: str, chaines: list[dict]) -> str:
+    for chaine in chaines:
+        if pays in chaine["chaine_par_defaut"]:
+            return chaine["nom_mumu"]
