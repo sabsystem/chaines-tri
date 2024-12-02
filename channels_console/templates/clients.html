@@ -8,7 +8,7 @@
 
     <title>Tri Chaînes</title>
 
-    <link rel="stylesheet" type="text/css" href="{% static 'styles/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/styles.css' %}">
 
     <script src="{% static 'scripts/script.js' %}" defer></script>
     <script src="{% static 'scripts/clients.js' %}" defer></script>
@@ -55,6 +55,7 @@
             <tr>
                 <th>Nom Client</th>
                 <th>Nombre Chaînes</th>
+                <th>Actions</th>
             </tr>
             </thead>
 
@@ -68,6 +69,10 @@
                     ondragend="dragEnd(this)">
                     <td id="nom_client" ondblclick="activerModification(this)">{{ client }}</td>
                     <td id="nombre_chaines">{{ client|client_nombre_chaines:chaines }}</td>
+                    <td><button class="bouton" onclick="supprimer_client('{{ client }}')"> Supprimer </button>
+                        <button id="bouton_csv" class="bouton-telecharger" onclick="window.location.href='{% url "telecharger_csv" %}'">
+                        <img src="{% static 'images/download.png' %}" alt="Télécharger CSV" style="width: 24px; height: 24px;">
+                    </td>
                 </tr>
             {% endfor %}
             </tbody>

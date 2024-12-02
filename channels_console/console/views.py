@@ -32,3 +32,13 @@ def clients(request, filtre=""):
         'clients': liste_clients,
         'filtre': filtre
     })
+
+def pays(request):
+    # Charger les pays depuis le fichier JSON
+    with open("../res/liste_pays.json", "r") as json_file:
+        liste_pays = json.load(json_file)
+
+    # Afficher la page `pays.html` et transmettre la liste des pays
+    return render(request, 'pays.html', {
+        'pays': liste_pays
+    })

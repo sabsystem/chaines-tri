@@ -1,0 +1,66 @@
+{% load static %}
+{% load filters %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Les Pays</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/styles.css' %}">
+
+    <script src="{% static 'scripts/script.js' %}" defer></script>
+    <script src="{% static 'scripts/pays.js' %}" defer></script>
+</head>
+
+<body>
+{% include 'components/header.html' %}
+
+<main>
+    <div id="ajout-pays" class="formulaire">
+        <div class="formulaire-contenu">
+            <span class="fermer-formulaire" onclick="fermer_formulaire('ajout-pays')">&times;</span>
+            <label for="nom-pays">Nom du Pays à Ajouter</label>
+            <input type="text" id="nom-pays" placeholder="Nom du pays...">
+            <button id="creer-pays" onclick="ajouterPays()">Créer Pays</button>
+        </div>
+    </div>
+
+    <h1>PAYS : {{ pays|length }}</h1>
+
+    <div id="gestion-boutons">
+        <button class="bouton" onclick="ouvrir_formulaire('ajout-pays')">Ajouter Pays</button>
+        <button class="bouton" onclick="filtrer()">Filtrer</button>
+    </div>
+
+    <section>
+        <table>
+            <thead>
+                <tr>
+                    <th>Pays</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+           <tbody id="zone-pays">
+    {% for pays in pays %}
+        <tr id="{{ pays.id }}"
+            class="pays"
+            draggable="true"
+            ondragstart="dragStart(this)"
+            ondragenter="dragEnter(this)"
+            ondragend="dragEnd(this)">
+            <td id="nom_pays" ondblclick="activerModification(this)">{{ pays.nom }}</td>
+            <td>
+                <button class="bouton" onclick="supprimerPays('{{ pays.id }}')">Supprimer</button>
+            </td>
+        </tr>
+    {% endfor %}
+</tbody>
+
+        </table>
+    </section>
+</main>
+
+</body>
+</html>
