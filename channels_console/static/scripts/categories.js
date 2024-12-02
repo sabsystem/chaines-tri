@@ -33,3 +33,15 @@ async function modifier_equivalences(id_formulaire) {
 
     window.location.reload();
 }
+
+async function supprimer_categorie(categorie) {
+    await fetch(`/api/categories/supprimer`, {
+        method: "DELETE", headers: {
+            "Content-Type": "application/json"
+        }, body: JSON.stringify({
+            'categorie': categorie
+        })
+    });
+
+    window.location.reload();
+}

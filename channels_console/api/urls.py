@@ -18,5 +18,6 @@ urlpatterns = [
     path("clients/ajouter/chaine", views.ajout_clients_chaine, name="ajouter_clients_chaine"),
     path('clients/supprimer', views.suppression_client, name='suppression_client'),
     path('categories/modifier/equivalences', views.modification_equivalences, name='modification_equivalences'),
+    path('categories/supprimer', views.suppression_categorie, name='suppression_categorie'),
     path('telecharger_csv/', views.telecharger_csv, name='telecharger_csv'),
 ]

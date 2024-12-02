@@ -225,3 +225,28 @@ def modification_equivalences(request):
         return JsonResponse(liste_categories, safe=False)
     else:
         return JsonResponse({"error": "Invalid request method"}, status=400)
+
+
+@csrf_exempt
+def suppression_categorie(request):
+    if request.method == "DELETE":
+        data = json.loads(request.body)
+        nom_categorie = data.get("categorie")
+
+        # Ouverture du fichier json
+        with open("../res/liste_categories.json", "r") as json_file:
+            liste_categories: list[dict] = json.load(json_file)
+
+        categorie = next((c for c in liste_categories if c["nom"] == nom_categorie), None)
+
+        if categorie is not None:
+            liste_categories.remove(categorie)
+
+        # Ecriture de la nouvelle liste de clients
+        with open("../res/liste_categories.json", "w") as outfile:
+            outfile.write(json.dumps(liste_categories, indent=4))
+
+        # Envoi de la nouvelle liste de chaines
+        return JsonResponse(liste_categories, safe=False)
+    else:
+        return JsonResponse({"error": "Invalid request method"}, status=400)
