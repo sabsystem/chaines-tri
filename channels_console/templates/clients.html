@@ -70,9 +70,8 @@
                     <td id="nom_client" ondblclick="activerModification(this)">{{ client }}</td>
                     <td id="nombre_chaines">{{ client|client_nombre_chaines:chaines }}</td>
                     <td><button class="bouton" onclick="supprimer_client('{{ client }}')"> Supprimer </button>
-                        <button id="bouton_csv" class="bouton-telecharger" onclick="telecharger_csv('{{ client }}')">
+                        <button id="bouton_csv" class="bouton-telecharger" onclick="window.location.href='{% url "telecharger_csv" %}'">
                         <img src="{% static 'images/download.png' %}" alt="Télécharger CSV" style="width: 24px; height: 24px;">
-                        </button>
                     </td>
                 </tr>
             {% endfor %}

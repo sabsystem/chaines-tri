@@ -44,22 +44,5 @@ async function supprimer_client(nom_client) {
     }
 }
 
-function telechargerCSV(clientNom) {
-    if (!clientNom) {
-        console.error("Le nom du client est introuvable.");
-        alert("Nom du client introuvable.");
-        return;
-    }
-
-    var csvContent = "Nom Client;Adresse IP;Port\n";
-    csvContent += `"${clientNom}";"adresse ip";"1234"\n`;
-
-    var blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-    var url = URL.createObjectURL(blob);
-    var a = document.createElement('a');
-    a.href = url;
-    a.download = `${clientNom}.csv`;
-    a.click();
-}
 
 
