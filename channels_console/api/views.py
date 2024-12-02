@@ -4,6 +4,7 @@ from django.http import JsonResponse
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 
+
 # Getters
 def categories(request):
     # Ouverture du fichier json
@@ -37,6 +38,17 @@ def clients_chaine(request, chaine: str):
 
     # Envoi de la liste de clients de la chaîne à jour
     return JsonResponse(liste_clients_chaine, safe=False)
+
+
+def equivalences_categorie(request, categorie: str):
+    # Ouverture des fichiers json
+    with open("../res/liste_categories.json", "r") as json_file:
+        liste_categories: list[dict] = json.load(json_file)
+
+    informations_categorie = next((c for c in liste_categories if c["nom"] == categorie), None)
+
+    # Envoi de la liste d'équivalences de la catégorie à jour
+    return JsonResponse(informations_categorie["equivalence"], safe=False)
 
 
 def pays(request):
@@ -157,6 +169,7 @@ def suppression_client(request):
 
     return JsonResponse({"error": "Invalid request method"}, status=400)
 
+
 def telecharger_csv(request):
     with open("../gen/association.json", "r") as json_file:
         associations = json.load(json_file)
@@ -182,3 +195,33 @@ def telecharger_csv(request):
 
     return response
 
+
+@csrf_exempt
+def modification_equivalences(request):
+    if request.method == "POST":
+        data = json.loads(request.body)
+        liste_equivalences = data.get("equivalences")
+        nom_categorie = data.get("categorie")
+
+        # Ouverture du fichier json
+        with open("../res/liste_categories.json", "r") as json_file:
+            liste_categories: list[dict] = json.load(json_file)
+
+        for equivalence in liste_equivalences:
+            for categorie in liste_categories:
+                if equivalence in categorie["equivalence"]:
+                    categorie["equivalence"].remove(equivalence)
+
+        categorie = next((c for c in liste_categories if c["nom"] == nom_categorie), None)
+
+        if categorie is not None:
+            categorie["equivalence"] = liste_equivalences
+
+        # Ecriture de la nouvelle liste de clients
+        with open("../res/liste_categories.json", "w") as outfile:
+            outfile.write(json.dumps(liste_categories, indent=4))
+
+        # Envoi de la nouvelle liste de chaines
+        return JsonResponse(liste_categories, safe=False)
+    else:
+        return JsonResponse({"error": "Invalid request method"}, status=400)

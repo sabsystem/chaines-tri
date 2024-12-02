@@ -33,6 +33,7 @@ def clients(request, filtre=""):
         'filtre': filtre
     })
 
+
 def pays(request):
     # Charger les pays depuis le fichier JSON
     with open("../res/liste_pays.json", "r") as json_file:
@@ -41,4 +42,27 @@ def pays(request):
     # Afficher la page `pays.html` et transmettre la liste des pays
     return render(request, 'pays.html', {
         'pays': liste_pays
+    })
+
+
+def categories(request):
+    # Charger les catégories depuis le fichier JSON
+    with open("../res/liste_categories.json", "r") as json_file:
+        liste_categories: list[dict] = json.load(json_file)
+
+    # Charger les équivalences github depuis le fichier iptv.json
+    with open("../gen/iptv.json", "r") as json_file:
+        liste_github = json.load(json_file)
+
+    liste_equivalences: list[str] = []
+
+    for chaine in liste_github:
+        for categorie in chaine['categories']:
+            if categorie not in liste_equivalences:
+                liste_equivalences.append(categorie)
+
+    # Afficher la page `categories.html` et transmettre la liste des pays
+    return render(request, 'categories.html', {
+        'categories': liste_categories,
+        'categories_github': liste_equivalences
     })

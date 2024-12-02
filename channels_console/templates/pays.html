@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Les Pays</title>
+    <title>Tri Chaînes - Pays</title>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded"/>
     <link rel="stylesheet" type="text/css" href="{% static 'styles/styles.css' %}">
@@ -44,16 +44,16 @@
             </tr>
             </thead>
             <tbody id="zone-pays">
-            {% for pays in pays %}
-                <tr id="{{ pays.id }}"
+            {% for p in pays %}
+                <tr id="{{ p }}"
                     class="pays"
                     draggable="true"
                     ondragstart="dragStart(this)"
                     ondragenter="dragEnter(this)"
                     ondragend="dragEnd(this)">
-                    <td id="nom_pays" ondblclick="activerModification(this)">{{ pays }}</td>
+                    <td id="nom_pays" ondblclick="activerModification(this)">{{ p }}</td>
                     <td>
-                        <button class="bouton" onclick="supprimerPays('{{ pays }}')">
+                        <button class="bouton" onclick="supprimerPays('{{ p }}')">
                             <span class="material-symbols-rounded"> delete </span>
                         </button>
                     </td>

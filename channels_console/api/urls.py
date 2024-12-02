@@ -5,6 +5,7 @@ from . import views
 urlpatterns = [
     # Getters
     path("categories", views.categories, name="categories"),
+    path("categories/equivalences/<str:categorie>", views.equivalences_categorie, name="equivalences_categorie"),
     path("clients", views.clients, name="clients"),
     path("clients/chaine/<str:chaine>", views.clients_chaine, name="clients_chaine"),
     path("pays", views.pays, name="pays"),
@@ -16,5 +17,6 @@ urlpatterns = [
     path("clients/ajouter", views.ajout_client, name="ajouter_client"),
     path("clients/ajouter/chaine", views.ajout_clients_chaine, name="ajouter_clients_chaine"),
     path('clients/supprimer', views.suppression_client, name='suppression_client'),
+    path('categories/modifier/equivalences', views.modification_equivalences, name='modification_equivalences'),
     path('telecharger_csv/', views.telecharger_csv, name='telecharger_csv'),
 ]
