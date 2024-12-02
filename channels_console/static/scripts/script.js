@@ -54,6 +54,7 @@ async function activerModification(element) {
         case "forcer_diffusion":
         case "forcer_non_diffusion":
         case "a_diffuser":
+        case "diffuser":
             creerSelection(element, ["True", "False"])
             break;
 
