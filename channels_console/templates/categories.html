@@ -23,9 +23,32 @@
     <div id="ajout-categorie" class="formulaire">
         <div class="formulaire-contenu">
             <span class="fermer-formulaire" onclick="fermer_formulaire('ajout-categorie')">&times;</span>
-            <label for="nom-categorie">Nom de la Catégorie à Ajouter</label>
-            <input type="text" id="nom-categorie" placeholder="Nom de la catégorie...">
-            <button id="creer-pays" onclick="ajouter_categorie()">Créer Catégorie</button>
+
+            <h1>Ajouter une Catégorie</h1>
+
+            <div>
+                <label for="nom-categorie"><b>Nom de la Catégorie à Ajouter</b></label>
+                <input type="text" id="nom-categorie" placeholder="Nom de la catégorie...">
+            </div>
+
+            <div>
+                <label for="diffuser-categorie"><b>Diffuser</b></label>
+                <input type="checkbox" id="diffuser-categorie">
+            </div>
+
+            <div>
+                <label for="equivalences-categorie"><b>Équivalences :</b></label>
+                <div id="liste-categories">
+                    {% for categorie in categories_github %}
+                        <div>
+                            <input id="{{ categorie }}" type="checkbox">
+                            <label for="{{ categorie }}">{{ categorie }}</label>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <button id="creer-pays" onclick="ajouter_categorie('ajout-categorie')">Créer Catégorie</button>
         </div>
     </div>
 
@@ -36,7 +59,7 @@
             <h1>Équivalences de la Catégorie : <span id="formulaire-categorie-equivalences">Aucune Catégorie Sélectionnée</span>
             </h1>
 
-            <div id="liste-categories">
+            <div id="liste-categories-modif">
                 {% for categorie in categories_github %}
                     <div>
                         <input id="{{ categorie }}" type="checkbox">
@@ -55,7 +78,7 @@
 
     <div id="gestion-boutons">
         <div>
-            <button class="bouton" onclick="">Ajouter Client</button>
+            <button class="bouton" onclick="ouvrir_formulaire('ajout-categorie')">Ajouter Catégorie</button>
             <button class="bouton" onclick="enregistrer()">Enregistrer</button>
             <button class="bouton" onclick="window.location.reload()">Réinitialiser</button>
             <button class="bouton" onclick="trier()">Trier</button>

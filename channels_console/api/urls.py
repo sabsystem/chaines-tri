@@ -19,5 +19,6 @@ urlpatterns = [
     path('clients/supprimer', views.suppression_client, name='suppression_client'),
     path('categories/modifier/equivalences', views.modification_equivalences, name='modification_equivalences'),
     path('categories/supprimer', views.suppression_categorie, name='suppression_categorie'),
+    path('categories/ajouter', views.ajout_categorie, name='ajout_categorie'),
     path('telecharger_csv/', views.telecharger_csv, name='telecharger_csv'),
 ]

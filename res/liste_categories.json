@@ -1,120 +1,120 @@
 [
-  {
-    "nom": "general interest",
-    "diffuser": true,
-    "equivalence": [
-      "general"
-    ]
-  },
-  {
-    "nom": "news",
-    "diffuser": true,
-    "equivalence": [
-      "news"
-    ]
-  },
-  {
-    "nom": "economics",
-    "diffuser": true,
-    "equivalence": [
-      "business"
-    ]
-  },
-  {
-    "nom": "sports",
-    "diffuser": true,
-    "equivalence": [
-      "sports",
-      "outdoor"
-    ]
-  },
-  {
-    "nom": "youth",
-    "diffuser": true,
-    "equivalence": [
-      "animation",
-      "kids"
-    ]
-  },
-  {
-    "nom": "documentary",
-    "diffuser": true,
-    "equivalence": [
-      "documentary",
-      "education",
-      "science"
-    ]
-  },
-  {
-    "nom": "music",
-    "diffuser": true,
-    "equivalence": [
-      "music"
-    ]
-  },
-  {
-    "nom": "series",
-    "diffuser": true,
-    "equivalence": [
-      "series"
-    ]
-  },
-  {
-    "nom": "cinema",
-    "diffuser": true,
-    "equivalence": [
-      "movies"
-    ]
-  },
-  {
-    "nom": "entertainment",
-    "diffuser": true,
-    "equivalence": [
-      "entertainment",
-      "classic",
-      "family",
-      "lifestyle",
-      "relax",
-      "travel",
-      "weather",
-      "auto",
-      "comedy",
-      "cooking"
-    ]
-  },
-  {
-    "nom": "culture",
-    "diffuser": true,
-    "equivalence": [
-      "culture"
-    ]
-  },
-  {
-    "nom": "politics",
-    "diffuser": true,
-    "equivalence": [
-      "legislative"
-    ]
-  },
-  {
-    "nom": "xxx",
-    "diffuser": false,
-    "equivalence": [
-      "xxx"
-    ]
-  },
-  {
-    "nom": "religion",
-    "diffuser": false,
-    "equivalence": [
-      "religion"
-    ]
-  },
-  {
-    "nom": "shop",
-    "diffuser": false,
-    "equivalence": [
-      "shop"
-    ]
-  }
+    {
+        "nom": "general interest",
+        "diffuser": true,
+        "equivalence": [
+            "general"
+        ]
+    },
+    {
+        "nom": "news",
+        "diffuser": true,
+        "equivalence": [
+            "news"
+        ]
+    },
+    {
+        "nom": "economics",
+        "diffuser": true,
+        "equivalence": [
+            "business"
+        ]
+    },
+    {
+        "nom": "sports",
+        "diffuser": true,
+        "equivalence": [
+            "sports",
+            "outdoor"
+        ]
+    },
+    {
+        "nom": "youth",
+        "diffuser": true,
+        "equivalence": [
+            "animation",
+            "kids"
+        ]
+    },
+    {
+        "nom": "documentary",
+        "diffuser": true,
+        "equivalence": [
+            "documentary",
+            "education",
+            "science"
+        ]
+    },
+    {
+        "nom": "music",
+        "diffuser": true,
+        "equivalence": [
+            "music"
+        ]
+    },
+    {
+        "nom": "series",
+        "diffuser": true,
+        "equivalence": [
+            "series"
+        ]
+    },
+    {
+        "nom": "cinema",
+        "diffuser": true,
+        "equivalence": [
+            "movies"
+        ]
+    },
+    {
+        "nom": "entertainment",
+        "diffuser": true,
+        "equivalence": [
+            "entertainment",
+            "classic",
+            "family",
+            "lifestyle",
+            "relax",
+            "travel",
+            "weather",
+            "auto",
+            "comedy",
+            "cooking"
+        ]
+    },
+    {
+        "nom": "culture",
+        "diffuser": true,
+        "equivalence": [
+            "culture"
+        ]
+    },
+    {
+        "nom": "politics",
+        "diffuser": true,
+        "equivalence": [
+            "legislative"
+        ]
+    },
+    {
+        "nom": "xxx",
+        "diffuser": false,
+        "equivalence": [
+            "xxx"
+        ]
+    },
+    {
+        "nom": "religion",
+        "diffuser": false,
+        "equivalence": [
+            "religion"
+        ]
+    },
+    {
+        "nom": "shop",
+        "diffuser": false,
+        "equivalence": [
+            "shop"
+        ]
+    }
 ]

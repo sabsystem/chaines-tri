@@ -250,3 +250,33 @@ def suppression_categorie(request):
         return JsonResponse(liste_categories, safe=False)
     else:
         return JsonResponse({"error": "Invalid request method"}, status=400)
+
+
+@csrf_exempt
+def ajout_categorie(request):
+    if request.method == "POST":
+        data = json.loads(request.body)
+        categorie: dict = data.get("categorie")
+
+        # Ouverture du fichier json
+        with open("../res/liste_categories.json", "r") as json_file:
+            liste_categories: list[dict] = json.load(json_file)
+
+        categorie_existante: dict = next((c for c in liste_categories if c["nom"] == categorie["nom"]), None)
+
+        if categorie_existante is None:
+            for equivalence in categorie["equivalence"]:
+                for cat in liste_categories:
+                    if equivalence in cat["equivalence"]:
+                        cat["equivalence"].remove(equivalence)
+
+            liste_categories.append(categorie)
+
+        # Ecriture de la nouvelle liste de clients
+        with open("../res/liste_categories.json", "w") as outfile:
+            outfile.write(json.dumps(liste_categories, indent=4))
+
+        # Envoi de la nouvelle liste de chaines
+        return JsonResponse(liste_categories, safe=False)
+    else:
+        return JsonResponse({"error": "Invalid request method"}, status=400)
