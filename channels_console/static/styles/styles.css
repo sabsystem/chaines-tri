@@ -52,18 +52,18 @@ body {
 .navbar a.active::before {
     width: 100%; /* Soulignement permanent pour le lien actif */
 }
+
 /* Style principal */
 h1 {
     font-size: 25px;
     padding: 5px;
     text-align: center;
-    margin-top: 20px;  /* Ajout d'un peu de marge au-dessus pour espacer du reste du contenu */
+    margin-top: 20px; /* Ajout d'un peu de marge au-dessus pour espacer du reste du contenu */
 }
 
 main {
     display: flex;
     flex-direction: column;
-    align-items: left;
     padding: 0 20px;
 }
 
@@ -74,7 +74,6 @@ section {
     background-color: #fff;
     padding: 20px;
     margin: 40px 0; /* Augmenter la marge en haut et en bas pour espacer plus du reste */
-    max-width: 1500px;
     width: 100%;
     box-shadow: 0 2px 4px rgba(122, 121, 121, 0.363);
     border-radius: 3px;

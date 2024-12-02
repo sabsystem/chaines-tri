@@ -8,6 +8,7 @@
 
     <title>Tri Chaînes</title>
 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded"/>
     <link rel="stylesheet" type="text/css" href="{% static 'styles/styles.css' %}">
 
     <script src="{% static 'scripts/script.js' %}" defer></script>
@@ -69,9 +70,14 @@
                     ondragend="dragEnd(this)">
                     <td id="nom_client" ondblclick="activerModification(this)">{{ client }}</td>
                     <td id="nombre_chaines">{{ client|client_nombre_chaines:chaines }}</td>
-                    <td><button class="bouton" onclick="supprimer_client('{{ client }}')"> Supprimer </button>
-                        <button id="bouton_csv" class="bouton-telecharger" onclick="window.location.href='{% url "telecharger_csv" %}'">
-                        <img src="{% static 'images/download.png' %}" alt="Télécharger CSV" style="width: 24px; height: 24px;">
+                    <td>
+                        <button class="bouton" onclick="supprimer_client('{{ client }}')">
+                            <span class="material-symbols-rounded"> delete </span>
+                        </button>
+                        <button id="bouton_csv" class="bouton"
+                                onclick="window.location.href='{% url "telecharger_csv" %}'">
+                            <span class="material-symbols-rounded"> download </span>
+                        </button>
                     </td>
                 </tr>
             {% endfor %}

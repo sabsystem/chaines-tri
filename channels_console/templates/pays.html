@@ -8,6 +8,7 @@
 
     <title>Les Pays</title>
 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded"/>
     <link rel="stylesheet" type="text/css" href="{% static 'styles/styles.css' %}">
 
     <script src="{% static 'scripts/script.js' %}" defer></script>
@@ -37,27 +38,28 @@
     <section>
         <table>
             <thead>
-                <tr>
-                    <th>Pays</th>
-                    <th>Actions</th>
-                </tr>
+            <tr>
+                <th>Pays</th>
+                <th>Actions</th>
+            </tr>
             </thead>
-           <tbody id="zone-pays">
-    {% for pays in pays %}
-        <tr id="{{ pays.id }}"
-            class="pays"
-            draggable="true"
-            ondragstart="dragStart(this)"
-            ondragenter="dragEnter(this)"
-            ondragend="dragEnd(this)">
-            <td id="nom_pays" ondblclick="activerModification(this)">{{ pays.nom }}</td>
-            <td>
-                <button class="bouton" onclick="supprimerPays('{{ pays.id }}')">Supprimer</button>
-            </td>
-        </tr>
-    {% endfor %}
-</tbody>
-
+            <tbody id="zone-pays">
+            {% for pays in pays %}
+                <tr id="{{ pays.id }}"
+                    class="pays"
+                    draggable="true"
+                    ondragstart="dragStart(this)"
+                    ondragenter="dragEnter(this)"
+                    ondragend="dragEnd(this)">
+                    <td id="nom_pays" ondblclick="activerModification(this)">{{ pays }}</td>
+                    <td>
+                        <button class="bouton" onclick="supprimerPays('{{ pays }}')">
+                            <span class="material-symbols-rounded"> delete </span>
+                        </button>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
         </table>
     </section>
 </main>
