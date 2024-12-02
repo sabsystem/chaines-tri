@@ -55,28 +55,33 @@ async function activerModification(element) {
         case "forcer_non_diffusion":
         case "a_diffuser":
         case "diffuser":
-            creerSelection(element, ["True", "False"])
+            creerSelection(element, ["True", "False", "None"])
             break;
 
         case "categorie":
             const categories = await fetch("/api/categories").then(response => response.json());
-            creerSelection(element, categories.map(c => c.nom))
+            creerSelection(element, categories.map(c => c.nom).concat(["None"]))
             break;
 
         case "pays":
             const pays = await fetch("/api/pays").then(response => response.json());
-            creerSelection(element, pays)
+            creerSelection(element, pays.concat(["None"]))
             break;
 
         case "langue":
             const langues = await fetch("/api/langues").then(response => response.json());
-            creerSelection(element, langues)
+            creerSelection(element, langues.concat(["None"]))
             break;
 
         case "id_github":
         case "nom_github":
         case "nom_mumu":
             creerInput(element)
+            break;
+
+        case "chaine_par_defaut":
+            const chaines = await fetch("/api/chaines").then(response => response.json());
+            creerSelection(element, chaines.map(c => c.nom_mumu).concat(["None"]))
             break;
     }
 }
