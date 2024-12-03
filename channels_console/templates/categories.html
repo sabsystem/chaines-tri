@@ -102,10 +102,11 @@
         <table>
             <thead>
             <tr>
-                <th>Nom Middleware</th>
-                <th>Nom(s) Github</th>
-                <th>Diffuser</th>
-                <th>Actions</th>
+                <th><span>Numéro <span class="material-symbols-rounded">arrow_drop_down</span></span></th>
+                <th><span>Nom Middleware</span></th>
+                <th><span>Nom(s) Github</span></th>
+                <th><span>Diffuser</span></th>
+                <th><span>Actions</span></th>
             </tr>
             </thead>
             <tbody id="zone-tri">
@@ -116,6 +117,7 @@
                     ondragstart="dragStart(this)"
                     ondragenter="dragEnter(this)"
                     ondragend="dragEnd(this)">
+                    <td id="numero">{{ forloop.counter }}</td>
                     <td id="nom" ondblclick="activerModification(this)">{{ categorie.nom }}</td>
                     <td id="equivalence"
                         ondblclick="ouvrir_formulaire_equivalences('modification-equivalences', '{{ categorie.nom }}')">

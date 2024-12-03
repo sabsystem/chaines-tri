@@ -54,9 +54,10 @@
         <table>
             <thead>
             <tr>
-                <th>Nom Client</th>
-                <th>Nombre Chaînes</th>
-                <th>Actions</th>
+                <th><span>Numéro <span class="material-symbols-rounded">arrow_drop_down</span></span></th>
+                <th><span>Nom Client</span></th>
+                <th><span>Nombre Chaînes</span></th>
+                <th><span>Actions</span></th>
             </tr>
             </thead>
 
@@ -68,6 +69,7 @@
                     ondragstart="dragStart(this)"
                     ondragenter="dragEnter(this)"
                     ondragend="dragEnd(this)">
+                    <td id="numero">{{ forloop.counter }}</td>
                     <td id="nom_client" ondblclick="activerModification(this)">{{ client }}</td>
                     <td id="nombre_chaines">{{ client|client_nombre_chaines:chaines }}</td>
                     <td>
