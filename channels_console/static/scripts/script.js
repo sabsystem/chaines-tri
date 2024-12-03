@@ -102,33 +102,27 @@ window.onclick = function (event) {
 }
 
 // Fonctionnement du drag en drop pour le déplacement des chaînes
-const zoneTri = document.getElementById("zone-tri");
 let selectedElement;
 let referenceElement;
 
-/**
- * @param {HTMLDivElement} div
- */
 function dragStart(div) {
     selectedElement = div;
 
     div.classList.add("deplacement");
 }
 
-/**
- * @param {HTMLDivElement} div
- */
-function dragEnter(div) {
+function dragEnter(div, id) {
     referenceElement = div;
+
+    const zoneTri = document.getElementById(id);
 
     zoneTri.insertBefore(selectedElement, referenceElement);
 }
 
-/**
- * @param {HTMLDivElement} div
- */
-function dragEnd(div) {
+function dragEnd(div, id) {
     div.classList.remove("deplacement");
+
+    const zoneTri = document.getElementById(id);
 
     const elementsTri = zoneTri.querySelectorAll(".element-tri");
 
@@ -150,8 +144,7 @@ function affichageChaines() {
     const fin = Math.min(debut + chainesParPage, rangees.length);
 
     rangees.forEach((row, index) => {
-        if (index >= debut && index < fin) row.style.display = "";
-        else row.style.display = "none";
+        if (index >= debut && index < fin) row.style.display = ""; else row.style.display = "none";
     });
 
     // Mise à jour du label du menu de sélection

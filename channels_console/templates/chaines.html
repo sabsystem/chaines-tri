@@ -36,7 +36,9 @@
                 {% endfor %}
             </div>
 
-            <button id="ajouter-clients" onclick="ajouter_clients('ajout-client')">Ajouter Clients</button>
+            <button class="bouton" id="ajouter-clients" onclick="ajouter_clients('ajout-client')">
+                Ajouter Clients
+            </button>
         </div>
     </div>
 
@@ -50,7 +52,9 @@
                 <input id="nouvelle-position" type="number" min="0" max="{{ chaines|length|sub:1 }}" value="0">
             </label>
 
-            <button id="deplacer-chaine" onclick="deplacer_chaine('deplacement-chaine')">Déplacer Chaîne</button>
+            <button class="bouton" id="deplacer-chaine" onclick="deplacer_chaine('deplacement-chaine')">
+                Déplacer Chaîne
+            </button>
         </div>
     </div>
 
@@ -105,8 +109,8 @@
                     class="element-tri"
                     draggable="true"
                     ondragstart="dragStart(this)"
-                    ondragenter="dragEnter(this)"
-                    ondragend="dragEnd(this)">
+                    ondragenter="dragEnter(this, 'zone-tri')"
+                    ondragend="dragEnd(this, 'zone-tri')">
                     <td id="numero"
                         ondblclick="ouvrir_formulaire_deplacement('deplacement-chaine', '{{ chaine.id }}')">{{ forloop.counter0 }}</td>
                     <td id="id" ondblclick="activerModification(this)">{{ chaine.id }}</td>

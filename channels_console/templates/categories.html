@@ -48,7 +48,9 @@
                 </div>
             </div>
 
-            <button id="creer-pays" onclick="ajouter_categorie('ajout-categorie')">Créer Catégorie</button>
+            <button class="bouton" id="creer-categorie" onclick="ajouter_categorie('ajout-categorie')">
+                Créer Catégorie
+            </button>
         </div>
     </div>
 
@@ -68,7 +70,8 @@
                 {% endfor %}
             </div>
 
-            <button id="modifier-equivalences" onclick="modifier_equivalences('modification-equivalences')">Modifier
+            <button class="bouton" id="modifier-equivalences"
+                    onclick="modifier_equivalences('modification-equivalences')">Modifier
                 Équivalences
             </button>
         </div>
@@ -115,14 +118,14 @@
                     class="categorie"
                     draggable="true"
                     ondragstart="dragStart(this)"
-                    ondragenter="dragEnter(this)"
-                    ondragend="dragEnd(this)">
+                    ondragenter="dragEnter(this, 'zone-tri')"
+                    ondragend="dragEnd(this, 'zone-tri')">
                     <td id="numero">{{ forloop.counter }}</td>
                     <td id="nom" ondblclick="activerModification(this)">{{ categorie.nom }}</td>
                     <td id="equivalence"
                         ondblclick="ouvrir_formulaire_equivalences('modification-equivalences', '{{ categorie.nom }}')">
                         {% for equivalence in categorie.equivalence %}
-                            <span style="border-radius: 4px; background-color: #aaaaaa50">{{ equivalence }}</span>
+                            <span class="vignette">{{ equivalence }}</span>
                         {% endfor %}
                     </td>
                     <td id="diffuser" ondblclick="activerModification(this)">{{ categorie.diffuser }}</td>

@@ -166,6 +166,12 @@ tbody tr:nth-child(odd) {
     border-radius: 5px;
 }
 
+.vignette {
+    border-radius: 4px;
+    background-color: #aaaaaa50;
+    padding: 10px;
+}
+
 /* Formulaires */
 .formulaire {
     display: none;

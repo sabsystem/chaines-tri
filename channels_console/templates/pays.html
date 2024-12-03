@@ -20,6 +20,28 @@
 {% include 'components/header.html' %}
 
 <main>
+    <div id="ordre-langues" class="formulaire">
+        <div class="formulaire-contenu">
+            <span class="fermer-formulaire" onclick="fermer_formulaire('ordre-langues')">&times;</span>
+
+            <h1>Pays à Modifier : <span id="pays-a-modifier">Aucun Pays Sélectionné</span></h1>
+
+            <table>
+                <thead>
+                <tr>
+                    <th><span>Numéro <span class="material-symbols-rounded">arrow_drop_down</span></span></th>
+                    <th><span>Langue</span></th>
+                </tr>
+                </thead>
+                <tbody id="liste-langues"></tbody>
+            </table>
+
+            <button class="bouton" id="appliquer-modifications" onclick="creer_client('ordre-langues')">
+                Appliquer Modifications
+            </button>
+        </div>
+    </div>
+
     <h1>PAYS : {{ pays|length }}</h1>
 
     <div id="gestion-boutons">
@@ -62,17 +84,17 @@
                     class="pays"
                     draggable="true"
                     ondragstart="dragStart(this)"
-                    ondragenter="dragEnter(this)"
-                    ondragend="dragEnd(this)">
+                    ondragenter="dragEnter(this, 'zone-tri')"
+                    ondragend="dragEnd(this, 'zone-tri')">
                     <td id="numero">{{ forloop.counter }}</td>
                     <td id="drapeau_pays"><img src="https://flagsapi.com/{{ p }}/flat/64.png" alt="{{ p }}"></td>
                     <td id="nom_pays">{{ p }}</td>
                     <td id="chaine_par_defaut"
                         ondblclick="activerModification(this)">{{ p|chaine_par_defaut:chaines }}</td>
                     <td id="nombre_chaines">{{ p|nombre_chaines_pays:chaines }}</td>
-                    <td id="langues">
+                    <td id="langues" ondblclick="ouvrir_formulaire_langues('ordre-langues', '{{ p }}')">
                         {% for langue in p|liste_langues_pays:chaines %}
-                            <span style="border-radius: 4px; background-color: #aaaaaa50">{{ langue }}</span>
+                            <span class="vignette">{{ langue }}</span>
                         {% endfor %}
                     </td>
                     <td id="diffuser" ondblclick="activerModification(this)">True</td>
