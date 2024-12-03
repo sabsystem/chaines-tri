@@ -25,8 +25,9 @@
         <div class="formulaire-contenu">
             <span class="fermer-formulaire" onclick="fermer_formulaire('ajout-client')">&times;</span>
 
-            <h1>Clients à Ajouter : <span id="formulaire-chaine">Aucune Chaîne Sélectionnée</span></h1>
+            <h1>Chaîne à Modifier : <span id="formulaire-chaine">Aucune Chaîne Sélectionnée</span></h1>
 
+            <label><b>Sélection de Clients :</b></label>
             <div id="liste-clients">
                 {% for client in clients %}
                     <div>
@@ -37,7 +38,7 @@
             </div>
 
             <button class="bouton" id="ajouter-clients" onclick="ajouter_clients('ajout-client')">
-                Ajouter Clients
+                Modifier Clients
             </button>
         </div>
     </div>
@@ -49,7 +50,8 @@
             <h1>Chaîne à Déplacer : <span id="chaine-a-deplacer">Aucune Chaîne Sélectionnée</span></h1>
 
             <label>
-                <input id="nouvelle-position" type="number" min="0" max="{{ chaines|length|sub:1 }}" value="0">
+                <input class="input" id="nouvelle-position" type="number" min="0" max="{{ chaines|length|sub:1 }}"
+                       value="0">
             </label>
 
             <button class="bouton" id="deplacer-chaine" onclick="deplacer_chaine('deplacement-chaine')">
