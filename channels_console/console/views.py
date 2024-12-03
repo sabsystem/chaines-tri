@@ -69,3 +69,32 @@ def categories(request):
         'categories': liste_categories,
         'categories_github': liste_equivalences
     })
+
+
+def serveurs(request):
+    # Charger les serveurs depuis le fichier JSON
+    with open("../res/liste_serveurs.json", "r") as json_file:
+        informations_serveurs: dict = json.load(json_file)
+
+    liste_serveurs: list[dict] = []
+
+    for serveur in informations_serveurs:
+        adapteurs: list[dict] = []
+
+        for adapteur in informations_serveurs[serveur]['adapteurs']:
+            adapteurs.append({
+                "nom": adapteur,
+                "satellite": informations_serveurs[serveur]['adapteurs'][adapteur]["satellite"],
+                "frequence": informations_serveurs[serveur]['adapteurs'][adapteur]["frequence"]
+            })
+
+        liste_serveurs.append({
+            "nom": serveur,
+            "ip": informations_serveurs[serveur]['ip'],
+            "adapteurs": adapteurs
+        })
+
+    # Afficher la page `serveurs.html` et transmettre la liste des pays
+    return render(request, 'serveurs.html', {
+        'serveurs': liste_serveurs,
+    })

@@ -1,0 +1,105 @@
+{% load static %}
+{% load filters %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tri Chaînes - Serveurs</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/styles.css' %}">
+
+    <script src="{% static 'scripts/script.js' %}" defer></script>
+    <script src="{% static 'scripts/serveurs.js' %}" defer></script>
+</head>
+
+<body>
+{% include 'components/header.html' %}
+
+<div id="ordre-adapteurs" class="formulaire">
+    <div class="formulaire-contenu">
+        <span class="fermer-formulaire" onclick="fermer_formulaire('ordre-adapteurs')">&times;</span>
+
+        <h1>Serveur à Modifier : <span id="serveur-a-modifier">Aucun Serveur Sélectionné</span></h1>
+
+        <table>
+            <thead>
+            <tr>
+                <th><span>Numéro <span class="material-symbols-rounded">arrow_drop_down</span></span></th>
+                <th><span>Satellite</span></th>
+                <th><span>Fréquence</span></th>
+            </tr>
+            </thead>
+            <tbody id="liste-adapteurs"></tbody>
+        </table>
+
+        <button class="bouton" id="appliquer-modifications" onclick="creer_client('ordre-adapteurs')">
+            Appliquer Modifications
+        </button>
+    </div>
+</div>
+
+<main>
+    <h1>SERVEURS : {{ serveurs|length }}</h1>
+
+    <div id="gestion-boutons">
+        <div>
+            <button class="bouton" onclick="enregistrer()">Enregistrer</button>
+            <button class="bouton" onclick="window.location.reload()">Réinitialiser</button>
+            <button class="bouton" onclick="trier()">Trier</button>
+            <label><input class="input" id="filtre" type="text"></label>
+            <button class="bouton" onclick="filtrer()">Filtrer</button>
+        </div>
+
+        <div>
+            <button class="bouton" onclick="pageAvant()"><<</button>
+            <label for="chaines-visibles">0-49</label>
+            <select class="bouton" id="chaines-visibles" oninput="changerPage()">
+                {% for option in serveurs|length|contenu_pages %}
+                    <option value="{{ option }}">{{ option }}</option>
+                {% endfor %}
+            </select>
+            <button class="bouton" onclick="pageApres()">>></button>
+        </div>
+    </div>
+
+    <section>
+        <table>
+            <thead>
+            <tr>
+                <th><span>Numéro <span class="material-symbols-rounded">arrow_drop_down</span></span></th>
+                <th><span>Serveur</span></th>
+                <th><span>IP</span></th>
+                <th><span>Adapteurs</span></th>
+            </tr>
+            </thead>
+            <tbody id="zone-tri">
+            {% for serveur in serveurs %}
+                <tr id="{{ serveur.nom }}"
+                    class="serveur"
+                    draggable="true"
+                    ondragstart="dragStart(this)"
+                    ondragenter="dragEnter(this, 'zone-tri')"
+                    ondragend="dragEnd(this, 'zone-tri')">
+                    <td id="numero">{{ forloop.counter }}</td>
+                    <td id="serveur">{{ serveur.nom }}</td>
+                    <td id="ip">{{ serveur.ip }}</td>
+                    <td id="adapteurs" ondblclick="ouvrir_formulaire_adapteurs('ordre-adapteurs', '{{ serveur.nom }}')">
+                        {% for adapteur in serveur.adapteurs %}
+                            <span class="vignette"
+                                  satellite="{{ adapteur.satellite }}"
+                                  frequence="{{ adapteur.frequence }}">{{ adapteur.nom }}</span>
+                        {% endfor %}
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </section>
+</main>
+
+</body>
+</html>
