@@ -45,3 +45,25 @@ def chaine_par_defaut(pays: str, chaines: list[dict]) -> str:
     for chaine in chaines:
         if pays in chaine["chaine_par_defaut"]:
             return chaine["nom_mumu"]
+
+
+@register.filter
+def nombre_chaines_pays(pays: str, chaines: list[dict]) -> int:
+    compte = 0
+
+    for chaine in chaines:
+        if pays == chaine["pays"]:
+            compte += 1
+
+    return compte
+
+
+@register.filter
+def liste_langues_pays(pays: str, chaines: list[dict]) -> set[str]:
+    langues: set[str] = set()
+
+    for chaine in chaines:
+        if pays == chaine["pays"]:
+            langues.add(chaine["langue"])
+
+    return langues
