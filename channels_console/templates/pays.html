@@ -53,7 +53,7 @@
                 <th><span>Chaîne par Défaut</span></th>
                 <th><span>Nombre de Chaînes</span></th>
                 <th><span>Langues</span></th>
-                <th><span>Actions</span></th>
+                <th><span>Diffuser</span></th>
             </tr>
             </thead>
             <tbody id="zone-tri">
@@ -75,11 +75,7 @@
                             <span style="border-radius: 4px; background-color: #aaaaaa50">{{ langue }}</span>
                         {% endfor %}
                     </td>
-                    <td>
-                        <button class="bouton" onclick="supprimerPays('{{ p }}')">
-                            <span class="material-symbols-rounded"> delete </span>
-                        </button>
-                    </td>
+                    <td id="diffuser" ondblclick="activerModification(this)">True</td>
                 </tr>
             {% endfor %}
             </tbody>
