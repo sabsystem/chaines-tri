@@ -52,7 +52,18 @@ def nombre_chaines_pays(pays: str, chaines: list[dict]) -> int:
     compte = 0
 
     for chaine in chaines:
-        if pays == chaine["pays"]:
+        if chaine["pays"] == pays and chaine["media"] == "tv":
+            compte += 1
+
+    return compte
+
+
+@register.filter
+def nombre_radios_pays(pays: str, chaines: list[dict]) -> int:
+    compte = 0
+
+    for chaine in chaines:
+        if chaine["pays"] == pays and chaine["media"] == "radio":
             compte += 1
 
     return compte

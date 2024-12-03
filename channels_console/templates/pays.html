@@ -74,6 +74,7 @@
                 <th><span>Pays</span></th>
                 <th><span>Chaîne par Défaut</span></th>
                 <th><span>Nombre de Chaînes</span></th>
+                <th><span>Nombre de Radios</span></th>
                 <th><span>Langues</span></th>
                 <th><span>Diffuser</span></th>
             </tr>
@@ -92,6 +93,7 @@
                     <td id="chaine_par_defaut"
                         ondblclick="activerModification(this)">{{ p|chaine_par_defaut:chaines }}</td>
                     <td id="nombre_chaines">{{ p|nombre_chaines_pays:chaines }}</td>
+                    <td id="nombre_radios">{{ p|nombre_radios_pays:chaines }}</td>
                     <td id="langues" ondblclick="ouvrir_formulaire_langues('ordre-langues', '{{ p }}')">
                         {% for langue in p|liste_langues_pays:chaines %}
                             <span class="vignette">{{ langue }}</span>
