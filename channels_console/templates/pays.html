@@ -47,6 +47,7 @@
         <table>
             <thead>
             <tr>
+                <th>Drapeau</th>
                 <th>Pays</th>
                 <th>Chaîne par Défaut</th>
                 <th>Actions</th>
@@ -60,6 +61,7 @@
                     ondragstart="dragStart(this)"
                     ondragenter="dragEnter(this)"
                     ondragend="dragEnd(this)">
+                    <td id="drapeau_pays"><img src="https://flagsapi.com/{{ p }}/flat/64.png" alt="{{ p }}"></td>
                     <td id="nom_pays">{{ p }}</td>
                     <td id="chaine_par_defaut"
                         ondblclick="activerModification(this)">{{ p|chaine_par_defaut:chaines }}</td>

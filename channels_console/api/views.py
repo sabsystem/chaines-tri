@@ -280,3 +280,41 @@ def ajout_categorie(request):
         return JsonResponse(liste_categories, safe=False)
     else:
         return JsonResponse({"error": "Invalid request method"}, status=400)
+
+
+@csrf_exempt
+def enregistrer_pays(request):
+    if request.method == "POST":
+        data = json.loads(request.body)
+        informations = data.get("pays")
+
+        liste_pays: list[str] = []
+
+        # Ouverture du fichier json
+        with open("../gen/association.json", "r") as json_file:
+            liste_chaines: list[dict] = json.load(json_file)
+
+        for information in informations:
+            nom_chaine = information["chaine"]
+            nom_pays = information["pays"]
+
+            liste_pays.append(nom_pays)
+
+            for chaine in liste_chaines:
+                if chaine["nom_mumu"] == nom_chaine:
+                    chaine["chaine_par_defaut"].append(nom_pays)
+
+                elif nom_pays in chaine["chaine_par_defaut"]:
+                    chaine["chaine_par_defaut"].remove(nom_pays)
+
+        # Ecriture des nouvelles informations
+        with open("../gen/association.json", "w") as outfile:
+            outfile.write(json.dumps(liste_chaines, indent=4))
+
+        with open("../res/liste_pays.json", "w") as outfile:
+            outfile.write(json.dumps(liste_pays, indent=4))
+
+        # Envoi de la nouvelle liste de pays
+        return JsonResponse(liste_pays, safe=False)
+    else:
+        return JsonResponse({"error": "Invalid request method"}, status=400)

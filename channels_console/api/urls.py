@@ -21,4 +21,5 @@ urlpatterns = [
     path('categories/supprimer', views.suppression_categorie, name='suppression_categorie'),
     path('categories/ajouter', views.ajout_categorie, name='ajout_categorie'),
     path('telecharger_csv/', views.telecharger_csv, name='telecharger_csv'),
+    path('pays/enregistrer', views.enregistrer_pays, name='enregistrer_pays'),
 ]
