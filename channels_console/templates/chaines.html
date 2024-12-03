@@ -127,7 +127,11 @@
                     <td id="a_diffuser" ondblclick="activerModification(this)">{{ chaine.a_diffuser }}</td>
                     <td id="ip" ondblclick="activerModification(this)">{{ chaine.ip }}</td>
                     <td id="clients"
-                        ondblclick="ouvrir_formulaire_clients('ajout-client', '{{ chaine.nom_mumu }}')">{{ chaine.clients|length }}</td>
+                        ondblclick="ouvrir_formulaire_clients('ajout-client', '{{ chaine.nom_mumu }}')">
+                        {% for client in chaine.clients %}
+                            <span class="vignette">{{ client }}</span>
+                        {% endfor %}
+                    </td>
                     <td id="occurrences" ondblclick="activerModification(this)">{{ chaine.occurrences|length }}</td>
                 </tr>
             {% endfor %}
