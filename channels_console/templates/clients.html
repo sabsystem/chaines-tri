@@ -31,6 +31,30 @@
             <button class="bouton" id="creer-client" onclick="creer_client('ajout-client')">Créer Client</button>
         </div>
     </div>
+<div id="ajout-client_chaine" class="formulaire">
+    <div class="formulaire-contenu">
+        <span class="fermer-formulaire" onclick="fermer_formulaire('ajout-client_chaine')">&times;</span>
+
+        <h1>Chaînes à Ajouter pour le Client: <span id="formulaire-client">Aucune Chaîne Sélectionné</span></h1>
+
+        <label><b>Sélection de Chaînes :</b></label>
+        <div id="liste-chaines">
+            {% for chaine in chaines %}
+                <div class="chaine-item">
+                    <input type="checkbox" id="chaine-{{ chaine.id }}" />
+                    <label for="chaine-{{ chaine.id }}">
+                        {{ chaine.nom }} {{ chaine.nom_github }}
+                    </label>
+                </div>
+            {% endfor %}
+        </div>
+
+        <button class="bouton" id="ajouter-chaines-client" onclick="ajouter_chaines_au_client('ajout-client_chaine')">
+            Ajouter Chaînes au Client
+        </button>
+    </div>
+</div>
+
 
     <h1>CLIENTS : {{ clients|length }}</h1>
 
@@ -73,7 +97,8 @@
                     ondragend="dragEnd(this, 'zone-tri')">
                     <td id="numero">{{ forloop.counter }}</td>
                     <td id="nom_client" ondblclick="activerModification(this)">{{ client }}</td>
-                    <td id="nombre_chaines">{{ client|client_nombre_chaines:chaines }}</td>
+                    <td id="nombre_chaines" ondblclick="ouvrir_formulaire_chaines('ajout-client_chaine', '{{ client.nom }}')">
+                    {{ client|client_nombre_chaines:chaines }}</td>
                     <td>
                         <button class="bouton" onclick="supprimer_client('{{ client }}')">
                             <span class="material-symbols-rounded"> delete </span>
