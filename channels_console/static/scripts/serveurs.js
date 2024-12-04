@@ -54,29 +54,28 @@ async function ajouter_adapteur() {
     elementListeAdapteurs.appendChild(adapteur);
 }
 
-async function appliquer_modifications() {
+async function appliquer_modifications(id_formulaire) {
     const serveur = document.querySelector("span[id='serveur-a-modifier']").textContent;
     const elementListeAdapteurs = document.getElementById("liste-adapteurs");
     const listeAdapteurs = elementListeAdapteurs.childNodes;
-    const adapteurs = {}
+    const adapteurs = []
 
     for (const adapteur of listeAdapteurs) {
         const numero = Number(adapteur.querySelector("td[id='numero']").textContent);
         const satellite = adapteur.querySelector("td[id='satellite']").textContent;
         const frequence = adapteur.querySelector("td[id='frequence']").textContent;
 
-        adapteurs[numero] = {satellite, frequence}
+        adapteurs.push({numero, satellite, frequence});
     }
 
-    await fetch("/api/serveurs/modifier/adapteurs", {
-        method: "POST", headers: {
-            "Content-Type": "application/json"
-        }, body: JSON.stringify({
-            serveur, adapteurs
-        })
-    });
+    const elementServeur = document.querySelector(`tr[id='${serveur}']`);
+    const elementAdapteurs = elementServeur.querySelector("td[id='adapteurs']");
+    elementAdapteurs.innerHTML = "";
 
-    window.location.reload();
+    for (const adapteur of adapteurs)
+        elementAdapteurs.innerHTML += `<span class="vignette" satellite="${adapteur.satellite}" frequence="${adapteur.frequence}">${adapteur.numero}</span> `
+
+    fermer_formulaire(id_formulaire);
 }
 
 async function supprimer_adapteur(element) {
@@ -94,4 +93,33 @@ async function supprimer_adapteur(element) {
     }
 
     alert("Adapteur supprimé avec succès, les numéros ont été organisés pour ne laisser aucun trou.\nN'oubliez pas d'appliquer les modifications pour les sauvegarder.");
+}
+
+async function creer_serveur(id_formulaire) {
+    const nom = document.getElementById("nom-nouveau-serveur").value;
+    const ip = document.getElementById("ip-nouveau-serveur").value;
+    const nombreAdapteurs = Number(document.getElementById("adapteurs-nouveau-serveur").value);
+    const satellite = document.getElementById("satellite-nouveau-serveur").value;
+
+    const zoneTri = document.getElementById("zone-tri");
+    const serveur = document.createElement("tr");
+    serveur.id = nom;
+    serveur.classList.add("element-tri");
+    serveur.draggable = true;
+    serveur.ondragstart = () => dragStart(serveur);
+    serveur.ondragenter = () => dragEnter(serveur, "zone-tri");
+    serveur.ondragend = () => dragEnd(serveur, "zone-tri");
+    let adapteurs = "";
+
+    for (let i = 0; i < nombreAdapteurs; i++)
+        adapteurs += `<span class="vignette" satellite="${satellite}" frequence="Aucune">${i}</span> `;
+
+    serveur.innerHTML = `<td id="numero" ondblclick="activerModification(this)">${zoneTri.children.length}</td>
+                         <td id="serveur" ondblclick="activerModification(this)">${nom}</td>
+                         <td id="serveur_ip" ondblclick="activerModification(this)">${ip}</td>
+                         <td id="adapteurs" ondblclick="ouvrir_formulaire_adapteurs('ordre-adapteurs', '${nom}')">${adapteurs}</td>`;
+
+    zoneTri.appendChild(serveur);
+
+    fermer_formulaire(id_formulaire);
 }

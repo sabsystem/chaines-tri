@@ -41,9 +41,32 @@
         <button class="bouton" id="ajouter-adapteur" onclick="ajouter_adapteur()">
             Ajouter Adapteur
         </button>
-        <button class="bouton" id="appliquer-modifications" onclick="appliquer_modifications()">
+        <button class="bouton" id="appliquer-modifications" onclick="appliquer_modifications('ordre-adapteurs')">
             Appliquer Modifications
         </button>
+    </div>
+</div>
+
+
+<div id="creer-serveur" class="formulaire">
+    <div class="formulaire-contenu">
+        <span class="fermer-formulaire" onclick="fermer_formulaire('creer-serveur')">&times;</span>
+
+        <h1>Ajout d'un Nouveau Serveur</h1>
+
+        <label for="nom-nouveau-serveur"><b>Nom du Serveur à Ajouter</b></label>
+        <input class="input" type="text" id="nom-nouveau-serveur" placeholder="Nom du serveur...">
+
+        <label for="ip-nouveau-serveur"><b>Adresse IP du Serveur</b></label>
+        <input class="input" type="text" id="ip-nouveau-serveur" placeholder="IP du serveur...">
+
+        <label for="adapteurs-nouveau-serveur"><b>Nombre d'Adapteurs</b></label>
+        <input class="input" type="number" id="adapteurs-nouveau-serveur" min="0" value="0">
+
+        <label for="satellite-nouveau-serveur"><b>Satellite à Attribuer aux Adapteurs</b></label>
+        <input class="input" type="text" id="satellite-nouveau-serveur" placeholder="Satellite principal du serveur...">
+
+        <button class="bouton" id="ajouter-adapteur" onclick="creer_serveur('creer-serveur')">Créer Serveur</button>
     </div>
 </div>
 
@@ -52,6 +75,7 @@
 
     <div id="gestion-boutons">
         <div>
+            <button class="bouton" onclick="ouvrir_formulaire('creer-serveur')">Ajouter Serveur</button>
             <button class="bouton" onclick="enregistrer()">Enregistrer</button>
             <button class="bouton" onclick="window.location.reload()">Réinitialiser</button>
             <button class="bouton" onclick="trier()">Trier</button>
@@ -84,12 +108,12 @@
             <tbody id="zone-tri">
             {% for serveur in serveurs %}
                 <tr id="{{ serveur.nom }}"
-                    class="serveur"
+                    class="element-tri"
                     draggable="true"
                     ondragstart="dragStart(this)"
                     ondragenter="dragEnter(this, 'zone-tri')"
                     ondragend="dragEnd(this, 'zone-tri')">
-                    <td id="numero">{{ forloop.counter }}</td>
+                    <td id="numero">{{ forloop.counter0 }}</td>
                     <td id="serveur" ondblclick="activerModification(this)">{{ serveur.nom }}</td>
                     <td id="serveur_ip" ondblclick="activerModification(this)">{{ serveur.ip }}</td>
                     <td id="adapteurs" ondblclick="ouvrir_formulaire_adapteurs('ordre-adapteurs', '{{ serveur.nom }}')">
