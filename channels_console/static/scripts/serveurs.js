@@ -123,3 +123,35 @@ async function creer_serveur(id_formulaire) {
 
     fermer_formulaire(id_formulaire);
 }
+
+async function enregistrer() {
+    const listeServeurs = document.getElementById("zone-tri").querySelectorAll("tr");
+
+    const serveurs = {};
+
+    for (const serveur of listeServeurs) {
+        const nom = serveur.querySelector("td[id='serveur']").textContent;
+        const ip = serveur.querySelector("td[id='serveur_ip']").textContent;
+        const listeServeurs = serveur.querySelector("td[id='adapteurs']").querySelectorAll("span");
+
+        const adapteurs = {};
+
+        for (const adapteur of listeServeurs) {
+            const numero = Number(adapteur.textContent);
+            const satellite = adapteur.getAttribute("satellite");
+            const frequence = adapteur.getAttribute("frequence");
+
+            adapteurs[numero] = {satellite, frequence};
+        }
+
+        serveurs[nom] = {ip, adapteurs}
+    }
+
+    await fetch("/api/serveurs/enregistrer", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({serveurs})
+    });
+
+    alert("Les serveurs ont été enregistrés avec succès.");
+}

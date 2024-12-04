@@ -330,23 +330,22 @@ def enregistrer_pays(request):
 
 
 @csrf_exempt
-def serveurs_modifier_adapteurs(request):
+def enregistrer_serveurs(request):
     if request.method == "POST":
         data = json.loads(request.body)
-        serveur = data.get("serveur")
-        adapteurs = data.get("adapteurs")
+        serveurs = data.get("serveurs")
 
         # Ouverture du fichier json
         with open("../res/liste_serveurs.json", "r") as json_file:
-            serveurs: dict = json.load(json_file)
+            liste_serveurs: dict = json.load(json_file)
 
-        serveurs[serveur]["adapteurs"] = adapteurs
+        liste_serveurs = serveurs
 
         # Ecriture des nouvelles informations
         with open("../res/liste_serveurs.json", "w") as outfile:
-            outfile.write(json.dumps(serveurs, indent=4))
+            outfile.write(json.dumps(liste_serveurs, indent=4))
 
         # Envoi de la nouvelle liste de serveurs
-        return JsonResponse(serveurs, safe=False)
+        return JsonResponse(liste_serveurs, safe=False)
     else:
         return JsonResponse({"error": "Invalid request method"}, status=400)
