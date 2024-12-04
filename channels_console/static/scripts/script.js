@@ -76,6 +76,8 @@ async function activerModification(element) {
         case "id_github":
         case "nom_github":
         case "nom_mumu":
+        case "satellite":
+        case "frequence":
             creerInput(element)
             break;
 

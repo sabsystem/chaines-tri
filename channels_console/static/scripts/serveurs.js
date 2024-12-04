@@ -16,8 +16,8 @@ async function ouvrir_formulaire_adapteurs(id_formulaire, serveur) {
         elementAdapteur.textContent = adapteur.textContent;
 
         elementAdapteur.innerHTML = `<td id="numero">${adapteur.textContent}</td>
-                                     <td id="satellite">${adapteur.getAttribute("satellite")}</td>
-                                     <td id="frequence">${adapteur.getAttribute("frequence")}</td>`;
+                                     <td id="satellite" ondblclick="activerModification(this)">${adapteur.getAttribute("satellite")}</td>
+                                     <td id="frequence" ondblclick="activerModification(this)">${adapteur.getAttribute("frequence")}</td>`;
 
         elementListeAdapteurs.appendChild(elementAdapteur);
     }

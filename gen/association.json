@@ -9,9 +9,7 @@
         "adulte": false,
         "media": "tv",
         "ip": "239.1.77.201",
-        "clients": [
-            "Canadiens"
-        ],
+        "clients": [],
         "chaine_par_defaut": [],
         "forcer_diffusion": false,
         "forcer_non_diffusion": false,
