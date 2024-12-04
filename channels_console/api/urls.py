@@ -12,6 +12,7 @@ urlpatterns = [
     path("langues", views.langues, name="langues"),
     path("iptv", views.iptv, name="iptv"),
     path("chaines", views.chaines, name="chaines"),
+    path("frequences", views.frequences, name="frequences"),
 
     # Setters
     path("clients/ajouter", views.ajout_client, name="ajouter_client"),
@@ -22,4 +23,5 @@ urlpatterns = [
     path('categories/ajouter', views.ajout_categorie, name='ajout_categorie'),
     path('telecharger_csv/', views.telecharger_csv, name='telecharger_csv'),
     path('pays/enregistrer', views.enregistrer_pays, name='enregistrer_pays'),
+    path('serveurs/modifier/adapteurs', views.serveurs_modifier_adapteurs, name='serveurs_modifier_adapteurs')
 ]

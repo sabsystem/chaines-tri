@@ -92,6 +92,15 @@ def chaines(request):
     return JsonResponse(liste_chaines, safe=False)
 
 
+def frequences(request):
+    # Ouverture du fichier json
+    with open("../gen/frequences_mumu.json", "r") as json_file:
+        liste_frequences: dict = json.load(json_file)
+
+    # Envoi de la liste de fréquences à jour
+    return JsonResponse(liste_frequences, safe=False)
+
+
 # Setters
 @csrf_exempt
 def ajout_client(request):
@@ -316,5 +325,28 @@ def enregistrer_pays(request):
 
         # Envoi de la nouvelle liste de pays
         return JsonResponse(liste_pays, safe=False)
+    else:
+        return JsonResponse({"error": "Invalid request method"}, status=400)
+
+
+@csrf_exempt
+def serveurs_modifier_adapteurs(request):
+    if request.method == "POST":
+        data = json.loads(request.body)
+        serveur = data.get("serveur")
+        adapteurs = data.get("adapteurs")
+
+        # Ouverture du fichier json
+        with open("../res/liste_serveurs.json", "r") as json_file:
+            serveurs: dict = json.load(json_file)
+
+        serveurs[serveur]["adapteurs"] = adapteurs
+
+        # Ecriture des nouvelles informations
+        with open("../res/liste_serveurs.json", "w") as outfile:
+            outfile.write(json.dumps(serveurs, indent=4))
+
+        # Envoi de la nouvelle liste de serveurs
+        return JsonResponse(serveurs, safe=False)
     else:
         return JsonResponse({"error": "Invalid request method"}, status=400)

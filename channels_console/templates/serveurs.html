@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded"/>
     <link rel="stylesheet" type="text/css" href="{% static 'styles/styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/serveurs.css' %}">
 
     <script src="{% static 'scripts/script.js' %}" defer></script>
     <script src="{% static 'scripts/serveurs.js' %}" defer></script>
@@ -31,12 +32,16 @@
                 <th><span>Numéro <span class="material-symbols-rounded">arrow_drop_down</span></span></th>
                 <th><span>Satellite</span></th>
                 <th><span>Fréquence</span></th>
+                <th><span>Actions</span></th>
             </tr>
             </thead>
             <tbody id="liste-adapteurs"></tbody>
         </table>
 
-        <button class="bouton" id="appliquer-modifications" onclick="creer_client('ordre-adapteurs')">
+        <button class="bouton" id="ajouter-adapteur" onclick="ajouter_adapteur()">
+            Ajouter Adapteur
+        </button>
+        <button class="bouton" id="appliquer-modifications" onclick="appliquer_modifications()">
             Appliquer Modifications
         </button>
     </div>
@@ -85,11 +90,16 @@
                     ondragenter="dragEnter(this, 'zone-tri')"
                     ondragend="dragEnd(this, 'zone-tri')">
                     <td id="numero">{{ forloop.counter }}</td>
-                    <td id="serveur">{{ serveur.nom }}</td>
-                    <td id="ip">{{ serveur.ip }}</td>
+                    <td id="serveur" ondblclick="activerModification(this)">{{ serveur.nom }}</td>
+                    <td id="serveur_ip" ondblclick="activerModification(this)">{{ serveur.ip }}</td>
                     <td id="adapteurs" ondblclick="ouvrir_formulaire_adapteurs('ordre-adapteurs', '{{ serveur.nom }}')">
                         {% for adapteur in serveur.adapteurs %}
-                            <span class="vignette"
+                            <span class="vignette
+                                         {% if adapteur.frequence == 'Indisponible' %}
+                                            indisponible
+                                         {% elif adapteur.frequence != 'Aucune' %}
+                                            diffusion-en-cours
+                                         {% endif %}"
                                   satellite="{{ adapteur.satellite }}"
                                   frequence="{{ adapteur.frequence }}">{{ adapteur.nom }}</span>
                         {% endfor %}

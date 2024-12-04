@@ -77,8 +77,18 @@ async function activerModification(element) {
         case "nom_github":
         case "nom_mumu":
         case "satellite":
-        case "frequence":
+        case "serveur":
+        case "serveur_ip":
             creerInput(element)
+            break;
+
+        case "frequence":
+            const frequences = await fetch("/api/frequences").then(response => response.json());
+            creerSelection(element, frequences
+                .map(frequence => frequence.frequence)
+                .concat(["Indisponible", "Aucune"])
+                .filter((frequence, index) => frequences.indexOf(frequence) !== index)
+            )
             break;
 
         case "chaine_par_defaut":
