@@ -68,5 +68,39 @@ function ouvrir_formulaire(id_formulaire) {
     document.getElementById(id_formulaire).style.display = 'block';
 }
 
+async function enregistrer_chaines(id_formulaire) {
+    const formulaire = document.getElementById(id_formulaire);
+    const clientNom = document.getElementById("formulaire-client").textContent;
+
+    const elementListeChaines = document.getElementById("liste-chaines");
+    const selecteursChaines = elementListeChaines.querySelectorAll("input[type='checkbox']");
+
+    const chainesSelectionnees = [];
+
+    for (const selecteur of selecteursChaines) {
+        if (selecteur.checked) {
+            chainesSelectionnees.push(selecteur.id.replace("chaine-", ""));
+        }
+    }
+
+    if (chainesSelectionnees.length > 0) {
+        await fetch(`/api/clients/ajouter/chaine`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                'client': clientNom,
+                'chaines': chainesSelectionnees
+            })
+        });
+
+        // Ferme le formulaire
+        formulaire.style.display = "none";
+        window.location.reload();
+    } else {
+        alert("Aucune chaîne sélectionnée");
+    }
+}
 
 

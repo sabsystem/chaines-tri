@@ -204,6 +204,34 @@ def telecharger_csv(request):
 
     return response
 
+@csrf_exempt
+def ajout_clients_chaine(request):
+    if request.method == "POST":
+        data = json.loads(request.body)
+        client_nom = data.get("client")
+        chaines = data.get("chaines")
+
+        if client_nom and chaines:
+            # Charger le fichier d'association JSON
+            with open("../gen/association.json", "r") as json_file:
+                liste_chaines = json.load(json_file)
+
+            # Trouver la chaîne correspondant au client
+            for chaine in liste_chaines:
+                if chaine["id"] in chaines:
+                    if client_nom not in chaine["clients"]:
+                        chaine["clients"].append(client_nom)
+
+            # Sauvegarder les modifications dans le fichier JSON
+            with open("../gen/association.json", "w") as json_file:
+                json.dump(liste_chaines, json_file, indent=4)
+
+            return JsonResponse({"message": "Chaînes ajoutées avec succès"})
+        else:
+            return JsonResponse({"error": "Données invalides"}, status=400)
+
+    return JsonResponse({"error": "Invalid request method"}, status=400)
+
 
 @csrf_exempt
 def modification_equivalences(request):

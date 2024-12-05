@@ -73,7 +73,9 @@
         "adulte": false,
         "media": "tv",
         "ip": "239.1.27.77",
-        "clients": [],
+        "clients": [
+            "test"
+        ],
         "chaine_par_defaut": [],
         "forcer_diffusion": false,
         "forcer_non_diffusion": false,
@@ -159,7 +161,9 @@
         "adulte": false,
         "media": "tv",
         "ip": "239.1.75.237",
-        "clients": [],
+        "clients": [
+            "Canadiens"
+        ],
         "chaine_par_defaut": [],
         "forcer_diffusion": false,
         "forcer_non_diffusion": false,
@@ -211,7 +215,9 @@
         "adulte": false,
         "media": "tv",
         "ip": "239.1.77.203",
-        "clients": [],
+        "clients": [
+            "test"
+        ],
         "chaine_par_defaut": [],
         "forcer_diffusion": false,
         "forcer_non_diffusion": false,
@@ -297,7 +303,9 @@
         "adulte": false,
         "media": "tv",
         "ip": "239.1.27.77",
-        "clients": [],
+        "clients": [
+            "test"
+        ],
         "chaine_par_defaut": [],
         "forcer_diffusion": false,
         "forcer_non_diffusion": false,
