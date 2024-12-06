@@ -158,23 +158,34 @@ def suppression_client(request):
             if not nom:
                 raise ValueError("Nom non fourni")
 
+            # Supprimer le client de liste_clients.json
             with open("../res/liste_clients.json", "r+") as json_file:
                 liste_clients = json.load(json_file)
-
-                # Vérifie si le client existe et le supprime
                 if nom in liste_clients:
                     liste_clients.remove(nom)
                     json_file.seek(0)
                     json.dump(liste_clients, json_file, indent=4)
                     json_file.truncate()
-                    return JsonResponse({"message": "Client supprimé avec succès"})
                 else:
                     return JsonResponse({"error": "Client non trouvé"}, status=404)
+
+            # Supprimer le client de toutes les chaînes dans association.json
+            with open("../gen/association.json", "r+") as json_file:
+                liste_chaines = json.load(json_file)
+                for chaine in liste_chaines:
+                    if nom in chaine.get("clients", []):
+                        chaine["clients"].remove(nom)
+
+                json_file.seek(0)
+                json.dump(liste_chaines, json_file, indent=4)
+                json_file.truncate()
+
+            return JsonResponse({"message": "Client supprimé avec succès"})
 
         except (json.JSONDecodeError, ValueError):
             return JsonResponse({"error": "Nom non fourni ou données invalides"}, status=400)
         except FileNotFoundError:
-            return JsonResponse({"error": "Fichier liste_clients.json introuvable"}, status=500)
+            return JsonResponse({"error": "Fichier introuvable"}, status=500)
 
     return JsonResponse({"error": "Invalid request method"}, status=400)
 

@@ -22,6 +22,11 @@ window.onclick = function (event) {
         fermer_formulaire('ajout-client');
 }
 
+async function confirm_suppression(nom_client) {
+    if (confirm(`Êtes-vous sûr(e) de vouloir supprimer le client : ${nom_client} ?`)) {
+        supprimer_client(nom_client);
+    }
+}
 async function supprimer_client(nom_client) {
     try {
         const response = await fetch('/api/clients/supprimer', {
