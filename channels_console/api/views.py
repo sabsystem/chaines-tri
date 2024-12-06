@@ -232,6 +232,18 @@ def ajout_clients_chaine(request):
 
     return JsonResponse({"error": "Invalid request method"}, status=400)
 
+def get_chaines_pour_client(request, client_nom):
+    # Charger le fichier JSON contenant les associations
+    with open("../gen/association.json", "r") as json_file:
+        liste_chaines = json.load(json_file)
+
+    chaines_associees = [
+        chaine["id"]
+        for chaine in liste_chaines
+        if client_nom in chaine["clients"]  # Vérifie si le client appartient à la chaîne
+    ]
+
+    return JsonResponse({"chaines_associees": chaines_associees})
 
 @csrf_exempt
 def modification_equivalences(request):

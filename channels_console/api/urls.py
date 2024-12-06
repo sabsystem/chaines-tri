@@ -8,6 +8,7 @@ urlpatterns = [
     path("categories/equivalences/<str:categorie>", views.equivalences_categorie, name="equivalences_categorie"),
     path("clients", views.clients, name="clients"),
     path("clients/chaine/<str:chaine>", views.clients_chaine, name="clients_chaine"),
+    path("clients/<str:client_nom>/chaines", views.get_chaines_pour_client, name="get_chaines_pour_client"),
     path("pays", views.pays, name="pays"),
     path("langues", views.langues, name="langues"),
     path("iptv", views.iptv, name="iptv"),
