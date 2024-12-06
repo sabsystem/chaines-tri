@@ -179,30 +179,28 @@ def suppression_client(request):
     return JsonResponse({"error": "Invalid request method"}, status=400)
 
 
-def telecharger_csv(request):
+def telecharger_csv(request, client_nom):
     with open("../gen/association.json", "r") as json_file:
         associations = json.load(json_file)
 
     response = HttpResponse(content_type="text/csv")
-    response["Content-Disposition"] = 'attachment; filename="clients.csv"'
+    response["Content-Disposition"] = f'attachment; filename="{client_nom}_chaines.csv"'
 
     writer = csv.writer(response, delimiter=";")
     # Les titres des colonnes
     writer.writerow(["CHANNELS", "IP ADDRESS", "PORT"])
 
     for association in associations:
-        # Extraire le nom GitHub et l'IP
-        nom_github = association.get("nom_github", "Inconnu")
-        ip = association.get("ip", "Inconnue")
-        port = 1234  # Port par défaut
+        # Vérifie si le client fait partie de cette chaîne
+        if client_nom in association.get("clients", []):
+            nom_github = association.get("nom_github", "Inconnu")
+            ip = association.get("ip", "Inconnue")
+            port = 1234  # Port par défaut
 
-        # Liste des clients associés à cette chaîne
-        clients = association.get("clients", [])
-
-        for client in clients:
             writer.writerow([nom_github, ip, port])
 
     return response
+
 
 @csrf_exempt
 def ajout_clients_chaine(request):
