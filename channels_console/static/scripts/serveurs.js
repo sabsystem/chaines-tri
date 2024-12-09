@@ -73,7 +73,7 @@ async function appliquer_modifications(id_formulaire) {
     elementAdapteurs.innerHTML = "";
 
     for (const adapteur of adapteurs)
-        elementAdapteurs.innerHTML += `<span class="vignette" satellite="${adapteur.satellite}" frequence="${adapteur.frequence}">${adapteur.numero}</span> `
+        elementAdapteurs.innerHTML += `<span class="vignette${adapteur.frequence === 'Indisponible' ? ' indisponible' : adapteur.frequence !== "Aucune" ? ' diffusion-en-cours' : ''}" satellite="${adapteur.satellite}" frequence="${adapteur.frequence}">${adapteur.numero}</span> `
 
     fermer_formulaire(id_formulaire);
 }
