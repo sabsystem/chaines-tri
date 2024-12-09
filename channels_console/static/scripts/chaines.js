@@ -180,17 +180,12 @@ async function appliquer_modifications() {
     const occurrences = [];
 
     for (const occurrence of listeOccurrences) {
-        const service_id = occurrence.querySelector("#service_id").textContent;
+        const service_id = Number(occurrence.querySelector("#service_id").textContent);
         const diffuser = occurrence.querySelector("#occurrence_diffuser").textContent === "True";
         const frequence = occurrence.querySelector("#occurrence_frequence").textContent;
         const satellite = occurrence.querySelector("#occurrence_satellite").textContent;
         const cryptee = occurrence.querySelector("#cryptee").textContent === "True";
         const en_ligne = occurrence.querySelector("#en_ligne").textContent === "True";
-        const ber = occurrence.querySelector("#occurrence_ber").textContent;
-        const signal = occurrence.querySelector("#occurrence_signal").textContent;
-        const snr = occurrence.querySelector("#occurrence_snr").textContent;
-        const ub = occurrence.querySelector("#occurrence_ub").textContent;
-        const ts_discontinuities = occurrence.querySelector("#occurrence_ts_d").textContent;
 
         occurrences.push({
             satellite, frequence, service_id, diffuser, cryptee, en_ligne
