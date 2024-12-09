@@ -173,7 +173,7 @@ async function ouvrir_formulaire_occurrences(formulaire_id, chaine) {
     ouvrir_formulaire(formulaire_id);
 }
 
-async function appliquer_modifications() {
+async function appliquer_modifications(formulaire_id) {
     const elementListeOccurrences = document.getElementById("liste-occurrences");
     const listeOccurrences = elementListeOccurrences.querySelectorAll("tr");
 
@@ -181,7 +181,7 @@ async function appliquer_modifications() {
 
     for (const occurrence of listeOccurrences) {
         const service_id = Number(occurrence.querySelector("#service_id").textContent);
-        const diffuser = occurrence.querySelector("#occurrence_diffuser").textContent === "True";
+        const diffuser = occurrences.find(o => o.diffuser) !== undefined ? false : occurrence.querySelector("#occurrence_diffuser").textContent === "True";
         const frequence = occurrence.querySelector("#occurrence_frequence").textContent;
         const satellite = occurrence.querySelector("#occurrence_satellite").textContent;
         const cryptee = occurrence.querySelector("#cryptee").textContent === "True";
@@ -201,4 +201,6 @@ async function appliquer_modifications() {
             chaine, occurrences
         })
     });
+
+    fermer_formulaire(formulaire_id)
 }
