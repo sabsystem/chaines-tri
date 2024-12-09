@@ -25,4 +25,6 @@ urlpatterns = [
     path('telecharger_csv/<str:client_nom>/', views.telecharger_csv, name='telecharger_csv'),
     path('pays/enregistrer', views.enregistrer_pays, name='enregistrer_pays'),
     path("serveurs/enregistrer", views.enregistrer_serveurs, name="enregistrer_serveurs"),
+    path("occurrences", views.occurrences, name="occurrences"),
+    path("occurrences/modifier", views.occurrences_modifier, name="occurrences_modifier"),
 ]

@@ -40,8 +40,8 @@
         "nom": "documentary",
         "diffuser": true,
         "equivalence": [
-            "documentary",
             "education",
+            "documentary",
             "science"
         ]
     },

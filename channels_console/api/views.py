@@ -214,6 +214,70 @@ def telecharger_csv(request, client_nom):
 
 
 @csrf_exempt
+def occurrences(request):
+    if request.method == "POST":
+        data = json.loads(request.body)
+        chaine = data.get("chaine")
+
+        # Ouverture des fichiers JSON
+        with open("../gen/association.json", "r") as json_file:
+            liste_chaines = json.load(json_file)
+
+        with open("../gen/frequences_mumu.json", "r") as json_file:
+            liste_frequences = json.load(json_file)
+
+        chaine_associee = next((c for c in liste_chaines if c["nom_mumu"] == chaine), None)
+
+        if chaine_associee is None:
+            return JsonResponse({"error": "Chaine non trouvée"}, status=404)
+
+        liste_occurrences = chaine_associee["occurrences"]
+
+        for occurrence in liste_occurrences:
+            frequence = next((f for f in liste_frequences if f["frequence"] == occurrence["frequence"]
+                              and f["satellite"] == occurrence["satellite"]
+                              and occurrence["service_id"] in f["service_ids"]), None)
+
+            if frequence is not None:
+                occurrence["ber"] = frequence["signal"]["ber"]
+                occurrence["signal"] = frequence["signal"]["signal"]
+                occurrence["snr"] = frequence["signal"]["snr"]
+                occurrence["ub"] = frequence["signal"]["ub"]
+                occurrence["ts_discontinuities"] = frequence["signal"]["ts_discontinuities"]
+
+        return JsonResponse(liste_occurrences, safe=False)
+    else:
+        return JsonResponse({"error": "Invalid request method"}, status=400)
+
+
+@csrf_exempt
+def occurrences_modifier(request):
+    if request.method == "POST":
+        data = json.loads(request.body)
+        chaine = data.get("chaine")
+        liste_occurrences = data.get("occurrences")
+
+        # Ouverture des fichiers JSON
+        with open("../gen/association.json", "r") as json_file:
+            liste_chaines = json.load(json_file)
+
+        chaine_associee = next((c for c in liste_chaines if c["nom_mumu"] == chaine), None)
+
+        if chaine_associee is None:
+            return JsonResponse({"error": "Chaine non trouvée"}, status=404)
+
+        chaine_associee["occurrences"] = liste_occurrences
+
+        # Sauvegarder les modifications dans le fichier JSON
+        with open("../gen/association.json", "w") as outfile:
+            outfile.write(json.dumps(liste_chaines, indent=4))
+
+        return JsonResponse(liste_chaines, safe=False)
+    else:
+        return JsonResponse({"error": "Invalid request method"}, status=400)
+
+
+@csrf_exempt
 def ajout_clients_chaine(request):
     if request.method == "POST":
         data = json.loads(request.body)
@@ -241,6 +305,7 @@ def ajout_clients_chaine(request):
 
     return JsonResponse({"error": "Invalid request method"}, status=400)
 
+
 def get_chaines_pour_client(request, client_nom):
     # Charger le fichier JSON contenant les associations
     with open("../gen/association.json", "r") as json_file:
@@ -253,6 +318,7 @@ def get_chaines_pour_client(request, client_nom):
     ]
 
     return JsonResponse({"chaines_associees": chaines_associees})
+
 
 @csrf_exempt
 def modification_equivalences(request):

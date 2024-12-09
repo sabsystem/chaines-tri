@@ -60,6 +60,36 @@
         </div>
     </div>
 
+    <div id="consultation-occurrences" class="formulaire">
+        <div class="formulaire-contenu">
+            <span class="fermer-formulaire" onclick="fermer_formulaire('consultation-occurrences')">&times;</span>
+
+            <h1>Occurrences de la Chaîne : <span id="chaine-a-consulter">Aucune Chaîne Sélectionnée</span></h1>
+
+            <table>
+                <thead>
+                <tr>
+                    <th><span>Numéro <span class="material-symbols-rounded">arrow_drop_down</span></span></th>
+                    <th><span>Service ID</span></th>
+                    <th><span>Diffuser</span></th>
+                    <th><span>Fréquence</span></th>
+                    <th><span>Satellite</span></th>
+                    <th><span>Cryptée</span></th>
+                    <th><span>En Ligne</span></th>
+                    <th><span>BER</span></th>
+                    <th><span>Signal</span></th>
+                    <th><span>SNR</span></th>
+                    <th><span>UB</span></th>
+                    <th><span>TS Discontinuities</span></th>
+                </tr>
+                </thead>
+                <tbody id="liste-occurrences"></tbody>
+            </table>
+
+            <button class="bouton" onclick="appliquer_modifications()">Appliquer Modifications</button>
+        </div>
+    </div>
+
     <h1>CHAÎNES : {{ chaines|length }} / ASSOCIÉES : {{ chaines|associations }}</h1>
 
     <div id="gestion-boutons">
@@ -134,7 +164,8 @@
                             <span class="vignette">{{ client }}</span>
                         {% endfor %}
                     </td>
-                    <td id="occurrences" ondblclick="activerModification(this)">{{ chaine.occurrences|length }}</td>
+                    <td id="occurrences"
+                        ondblclick="ouvrir_formulaire_occurrences('consultation-occurrences', '{{ chaine.nom_mumu }}')">{{ chaine.occurrences|length }}</td>
                 </tr>
             {% endfor %}
             </tbody>

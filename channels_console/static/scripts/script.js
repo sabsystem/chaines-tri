@@ -49,7 +49,7 @@ async function activerModification(element) {
             creerSelection(element, ["tv", "radio"])
             break;
 
-
+        case "occurrence_diffuser":
         case "adulte":
         case "forcer_diffusion":
         case "forcer_non_diffusion":

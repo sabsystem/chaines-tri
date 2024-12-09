@@ -86,8 +86,7 @@ async function changer_id(element) {
     };
 
     input.onkeydown = function (event) {
-        if (event.key === "Enter")
-            verification_modification_id(element, input, texte, liste_iptv)
+        if (event.key === "Enter") verification_modification_id(element, input, texte, liste_iptv)
     };
 
     input.focus();
@@ -136,8 +135,75 @@ async function fusionner_occurrences(id) {
     const chaineAssocierInfos = listeChaines.find(c => c.nom_mumu === chaineAssocier);
     const iptvAssocierInfos = listeChaines.find(c => c.id === iptvAssocier);
 
-    if (chaineAssocierInfos !== undefined && iptvAssocierInfos !== undefined)
-        iptvAssocierInfos.occurrences = iptvAssocierInfos.occurrences.concat(chaineAssocierInfos.occurrences);
+    if (chaineAssocierInfos !== undefined && iptvAssocierInfos !== undefined) iptvAssocierInfos.occurrences = iptvAssocierInfos.occurrences.concat(chaineAssocierInfos.occurrences);
 
     listeChaines.pop(chaineAssocierInfos);
+}
+
+async function ouvrir_formulaire_occurrences(formulaire_id, chaine) {
+    const elementChaine = document.getElementById("chaine-a-consulter");
+    elementChaine.textContent = chaine;
+
+    const listeOccurrences = document.getElementById("liste-occurrences");
+
+    const occurrences = await fetch(`/api/occurrences`, {
+        method: "POST", headers: {
+            "Content-Type": "application/json"
+        }, body: JSON.stringify({
+            'chaine': chaine
+        })
+    }).then(response => response.json());
+
+    listeOccurrences.innerHTML = "";
+
+    let numero = 0;
+    for (const occurrence of occurrences) listeOccurrences.innerHTML += `<td>${numero++}</td>
+                                       <td id="service_id">${occurrence.service_id}</td>
+                                       <td id="occurrence_diffuser" ondblclick="activerModification(this)">${occurrence.diffuser ? "True" : "False"}</td>
+                                       <td id="occurrence_frequence">${occurrence.frequence}</td>
+                                       <td id="occurrence_satellite">${occurrence.satellite}</td>
+                                       <td id="cryptee">${occurrence.cryptee ? "True" : "False"}</td>
+                                       <td id="en_ligne">${occurrence.en_ligne ? "True" : "False"}</td>
+                                       <td id="occurrence_ber">${occurrence.ber}</td>
+                                       <td id="occurrence_signal">${occurrence.signal}</td>
+                                       <td id="occurrence_snr">${occurrence.snr}</td>
+                                       <td id="occurrence_ub">${occurrence.ub}</td>
+                                       <td id="occurrence_ts_d">${occurrence.ts_discontinuities}</td>`;
+
+    ouvrir_formulaire(formulaire_id);
+}
+
+async function appliquer_modifications() {
+    const elementListeOccurrences = document.getElementById("liste-occurrences");
+    const listeOccurrences = elementListeOccurrences.querySelectorAll("tr");
+
+    const occurrences = [];
+
+    for (const occurrence of listeOccurrences) {
+        const service_id = occurrence.querySelector("#service_id").textContent;
+        const diffuser = occurrence.querySelector("#occurrence_diffuser").textContent === "True";
+        const frequence = occurrence.querySelector("#occurrence_frequence").textContent;
+        const satellite = occurrence.querySelector("#occurrence_satellite").textContent;
+        const cryptee = occurrence.querySelector("#cryptee").textContent === "True";
+        const en_ligne = occurrence.querySelector("#en_ligne").textContent === "True";
+        const ber = occurrence.querySelector("#occurrence_ber").textContent;
+        const signal = occurrence.querySelector("#occurrence_signal").textContent;
+        const snr = occurrence.querySelector("#occurrence_snr").textContent;
+        const ub = occurrence.querySelector("#occurrence_ub").textContent;
+        const ts_discontinuities = occurrence.querySelector("#occurrence_ts_d").textContent;
+
+        occurrences.push({
+            satellite, frequence, service_id, diffuser, cryptee, en_ligne
+        });
+    }
+
+    const chaine = document.getElementById("chaine-a-consulter").textContent;
+
+    await fetch("/api/occurrences/modifier", {
+        method: "POST", headers: {
+            "Content-Type": "application/json"
+        }, body: JSON.stringify({
+            chaine, occurrences
+        })
+    });
 }
