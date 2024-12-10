@@ -74,26 +74,27 @@ async function changer_id(element) {
 
     const liste_iptv = await fetch("/api/iptv").then(response => response.json());
 
-    const input = document.createElement("input");
+    const select = document.createElement("select");
+    select.innerHTML = liste_iptv.map(iptv => `<option value="${iptv.id}">${iptv.id}</option>`).join("\n");
+    select.innerHTML += `<option value="None">None</option>`;
     const texte = element.innerText;
-    input.type = "text";
-    input.value = texte
+    select.value = texte;
     element.innerText = "";
-    element.appendChild(input);
+    element.appendChild(select);
 
-    input.onblur = function () {
-        verification_modification_id(element, input, texte, liste_iptv);
+    select.onblur = function () {
+        verification_modification_id(element, select, texte, liste_iptv);
     };
 
-    input.onkeydown = function (event) {
-        if (event.key === "Enter") verification_modification_id(element, input, texte, liste_iptv)
+    select.onkeydown = function (event) {
+        if (event.key === "Enter") verification_modification_id(element, select, texte, liste_iptv);
     };
 
-    input.focus();
+    select.focus();
 }
 
-async function verification_modification_id(element, input, texte, liste_iptv) {
-    const chaine = liste_iptv.find(iptv => iptv.id === input.value);
+async function verification_modification_id(element, select, texte, liste_iptv) {
+    const chaine = liste_iptv.find(iptv => iptv.id === select.value);
 
     if (chaine !== undefined) {
         const zoneTri = document.getElementById("zone-tri");
@@ -123,7 +124,7 @@ async function verification_modification_id(element, input, texte, liste_iptv) {
     } else element.innerText = texte;
 }
 
-async function fusionner_occurrences(id) {
+async function fusionner_occurrences(id_formulaire) {
     const chaineAssocier = document.getElementById("chaine-a-associer").textContent;
     const iptvAssocier = document.getElementById("iptv-a-associer").textContent;
 

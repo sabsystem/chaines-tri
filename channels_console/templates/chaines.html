@@ -43,6 +43,23 @@
         </div>
     </div>
 
+    <div id="iptv-utilise" class="formulaire">
+        <div class="formulaire-contenu">
+            <span class="fermer-formulaire" onclick="fermer_formulaire('iptv-utilise')">&times;</span>
+
+            <h1>Chaîne à Associer : <span id="chaine-a-associer">Aucune Chaîne Sélectionnée</span></h1>
+            <h1>ID Github à Associer : <span id="iptv-a-associer">Aucun ID Sélectionné</span></h1>
+
+            <button class="bouton" id="ajouter-clients" onclick="fusionner_occurrences('iptv-utilise')">
+                Fusionner Occurrences
+            </button>
+
+            <button class="bouton" onclick="fermer_formulaire('iptv-utilise')">
+                Annuler
+            </button>
+        </div>
+    </div>
+
     <div id="deplacement-chaine" class="formulaire">
         <div class="formulaire-contenu">
             <span class="fermer-formulaire" onclick="fermer_formulaire('deplacement-chaine')">&times;</span>
@@ -147,7 +164,7 @@
                     ondragend="dragEnd(this, 'zone-tri')">
                     <td id="numero"
                         ondblclick="ouvrir_formulaire_deplacement('deplacement-chaine', '{{ chaine.id }}')">{{ forloop.counter0 }}</td>
-                    <td id="id" ondblclick="activerModification(this)">{{ chaine.id }}</td>
+                    <td id="id" ondblclick="changer_id(this)">{{ chaine.id }}</td>
                     <td id="nom_github" ondblclick="activerModification(this)">{{ chaine.nom_github }}</td>
                     <td id="nom_mumu" ondblclick="activerModification(this)">{{ chaine.nom_mumu }}</td>
                     <td id="pays" ondblclick="activerModification(this)">{{ chaine.pays }}</td>
