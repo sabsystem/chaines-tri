@@ -480,3 +480,41 @@ def chaines_modifier(request):
         return JsonResponse(nouvelle_liste_chaines, safe=False)
     else:
         return JsonResponse({"error": "Invalid request method"}, status=400)
+
+
+@csrf_exempt
+def chaines_enregistrer(request):
+    if request.method == "POST":
+        data = json.loads(request.body)
+        nouvelle_liste_chaines = data.get("chaines")
+
+        # Ouverture du fichier json
+        with open("../gen/association.json", "r") as json_file:
+            liste_chaines: list[dict] = json.load(json_file)
+
+        for nouvelle_chaine in nouvelle_liste_chaines:
+            chaine = next((c for c in liste_chaines if c["nom_mumu"] == nouvelle_chaine["nom_mumu"]), None)
+
+            if chaine is None:
+                continue
+
+            chaine["id"] = nouvelle_chaine["id"]
+            chaine["nom_github"] = nouvelle_chaine["nom_github"]
+            chaine["pays"] = nouvelle_chaine["pays"]
+            chaine["langue"] = nouvelle_chaine["langue"]
+            chaine["categorie"] = nouvelle_chaine["categorie"]
+            chaine["media"] = nouvelle_chaine["media"]
+            chaine["adulte"] = nouvelle_chaine["adulte"] == "True"
+            chaine["ip"] = nouvelle_chaine["ip"]
+            chaine["forcer_diffusion"] = nouvelle_chaine["forcer_diffusion"] == "True"
+            chaine["forcer_non_diffusion"] = nouvelle_chaine["forcer_non_diffusion"] == "True"
+            chaine["a_diffuser"] = nouvelle_chaine["a_diffuser"] == "True"
+
+        # Ecriture des nouvelles informations
+        with open("../gen/association.json", "w") as outfile:
+            outfile.write(json.dumps(liste_chaines, indent=4))
+
+        # Envoi de la nouvelle liste de chaines
+        return JsonResponse(liste_chaines, safe=False)
+    else:
+        return JsonResponse({"error": "Invalid request method"}, status=400)

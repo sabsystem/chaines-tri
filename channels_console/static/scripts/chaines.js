@@ -215,3 +215,48 @@ async function appliquer_modifications(formulaire_id) {
 
     fermer_formulaire(formulaire_id)
 }
+
+async function enregistrer() {
+    const zoneTri = document.getElementById("zone-tri");
+    const elementsTri = zoneTri.querySelectorAll(".element-tri");
+
+    const chaines = [];
+
+    for (const element of elementsTri) {
+        const id = element.id;
+        const nom_mumu = element.querySelector("#nom_mumu").innerText;
+        const nom_github = element.querySelector("#nom_github").innerText;
+        const pays = element.querySelector("#pays").innerText;
+        const langue = element.querySelector("#langue").innerText;
+        const categorie = element.querySelector("#categorie").innerText;
+        const media = element.querySelector("#media").innerText;
+        const adulte = element.querySelector("#adulte").innerText;
+        const ip = element.querySelector("#ip").innerText;
+        const forcer_diffusion = element.querySelector("#forcer_diffusion").innerText;
+        const forcer_non_diffusion = element.querySelector("#forcer_non_diffusion").innerText;
+        const a_diffuser = element.querySelector("#a_diffuser").innerText;
+
+        chaines.push({
+            id,
+            nom_mumu,
+            nom_github,
+            pays,
+            langue,
+            categorie,
+            media,
+            adulte,
+            ip,
+            forcer_diffusion,
+            forcer_non_diffusion,
+            a_diffuser
+        });
+    }
+
+    await fetch("/api/chaines/enregistrer", {
+        method: "POST", headers: {
+            "Content-Type": "application/json"
+        }, body: JSON.stringify({chaines})
+    });
+
+    window.location.reload();
+}
