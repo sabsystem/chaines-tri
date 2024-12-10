@@ -1,227 +1,1376 @@
 [
-    { "pays": "FR", "diffuser": true },
-    { "pays": "US", "diffuser": true },
-    { "pays": "CA", "diffuser": true },
-    { "pays": "GB", "diffuser": true },
-    { "pays": "IE", "diffuser": true },
-    { "pays": "BE", "diffuser": true },
-    { "pays": "NL", "diffuser": true },
-    { "pays": "LU", "diffuser": true },
-    { "pays": "DE", "diffuser": true },
-    { "pays": "AT", "diffuser": true },
-    { "pays": "CH", "diffuser": true },
-    { "pays": "ES", "diffuser": true },
-    { "pays": "IT", "diffuser": true },
-    { "pays": "PT", "diffuser": true },
-    { "pays": "GR", "diffuser": true },
-    { "pays": "CY", "diffuser": true },
-    { "pays": "FI", "diffuser": true },
-    { "pays": "NO", "diffuser": true },
-    { "pays": "SE", "diffuser": true },
-    { "pays": "DK", "diffuser": true },
-    { "pays": "IS", "diffuser": true },
-    { "pays": "LT", "diffuser": true },
-    { "pays": "LV", "diffuser": true },
-    { "pays": "EE", "diffuser": true },
-    { "pays": "PL", "diffuser": true },
-    { "pays": "CZ", "diffuser": true },
-    { "pays": "SK", "diffuser": true },
-    { "pays": "HU", "diffuser": true },
-    { "pays": "BG", "diffuser": true },
-    { "pays": "UA", "diffuser": true },
-    { "pays": "RO", "diffuser": true },
-    { "pays": "HR", "diffuser": true },
-    { "pays": "RS", "diffuser": true },
-    { "pays": "SI", "diffuser": true },
-    { "pays": "BA", "diffuser": true },
-    { "pays": "MD", "diffuser": true },
-    { "pays": "AL", "diffuser": true },
-    { "pays": "MK", "diffuser": true },
-    { "pays": "ME", "diffuser": true },
-    { "pays": "MC", "diffuser": true },
-    { "pays": "LI", "diffuser": true },
-    { "pays": "AD", "diffuser": true },
-    { "pays": "MT", "diffuser": true },
-    { "pays": "VA", "diffuser": true },
-    { "pays": "GI", "diffuser": true },
-    { "pays": "FO", "diffuser": true },
-    { "pays": "SM", "diffuser": true },
-    { "pays": "RU", "diffuser": true },
-    { "pays": "BY", "diffuser": true },
-    { "pays": "AM", "diffuser": true },
-    { "pays": "AZ", "diffuser": true },
-    { "pays": "GE", "diffuser": true },
-    { "pays": "KZ", "diffuser": true },
-    { "pays": "TJ", "diffuser": true },
-    { "pays": "KG", "diffuser": true },
-    { "pays": "UZ", "diffuser": true },
-    { "pays": "TM", "diffuser": true },
-    { "pays": "PK", "diffuser": true },
-    { "pays": "AF", "diffuser": true },
-    { "pays": "IR", "diffuser": true },
-    { "pays": "IQ", "diffuser": true },
-    { "pays": "TR", "diffuser": true },
-    { "pays": "IL", "diffuser": true },
-    { "pays": "LB", "diffuser": true },
-    { "pays": "JO", "diffuser": true },
-    { "pays": "PS", "diffuser": true },
-    { "pays": "SY", "diffuser": true },
-    { "pays": "QA", "diffuser": true },
-    { "pays": "AE", "diffuser": true },
-    { "pays": "OM", "diffuser": true },
-    { "pays": "BH", "diffuser": true },
-    { "pays": "KW", "diffuser": true },
-    { "pays": "SA", "diffuser": true },
-    { "pays": "YE", "diffuser": true },
-    { "pays": "ER", "diffuser": true },
-    { "pays": "DJ", "diffuser": true },
-    { "pays": "ET", "diffuser": true },
-    { "pays": "EG", "diffuser": true },
-    { "pays": "LY", "diffuser": true },
-    { "pays": "DZ", "diffuser": true },
-    { "pays": "TN", "diffuser": true },
-    { "pays": "MA", "diffuser": true },
-    { "pays": "MR", "diffuser": true },
-    { "pays": "ML", "diffuser": true },
-    { "pays": "SN", "diffuser": true },
-    { "pays": "CV", "diffuser": true },
-    { "pays": "GM", "diffuser": true },
-    { "pays": "GW", "diffuser": true },
-    { "pays": "GN", "diffuser": true },
-    { "pays": "SL", "diffuser": true },
-    { "pays": "LR", "diffuser": true },
-    { "pays": "CI", "diffuser": true },
-    { "pays": "BF", "diffuser": true },
-    { "pays": "GH", "diffuser": true },
-    { "pays": "TG", "diffuser": true },
-    { "pays": "BJ", "diffuser": true },
-    { "pays": "CM", "diffuser": true },
-    { "pays": "NE", "diffuser": true },
-    { "pays": "NG", "diffuser": true },
-    { "pays": "TD", "diffuser": true },
-    { "pays": "SD", "diffuser": true },
-    { "pays": "SS", "diffuser": true },
-    { "pays": "CF", "diffuser": true },
-    { "pays": "GQ", "diffuser": true },
-    { "pays": "GA", "diffuser": true },
-    { "pays": "CG", "diffuser": true },
-    { "pays": "CD", "diffuser": true },
-    { "pays": "RW", "diffuser": true },
-    { "pays": "BI", "diffuser": true },
-    { "pays": "UG", "diffuser": true },
-    { "pays": "KE", "diffuser": true },
-    { "pays": "SO", "diffuser": true },
-    { "pays": "TZ", "diffuser": true },
-    { "pays": "AO", "diffuser": true },
-    { "pays": "ZM", "diffuser": true },
-    { "pays": "MW", "diffuser": true },
-    { "pays": "MG", "diffuser": true },
-    { "pays": "MU", "diffuser": true },
-    { "pays": "KM", "diffuser": true },
-    { "pays": "MZ", "diffuser": true },
-    { "pays": "ZW", "diffuser": true },
-    { "pays": "BW", "diffuser": true },
-    { "pays": "NA", "diffuser": true },
-    { "pays": "LS", "diffuser": true },
-    { "pays": "SZ", "diffuser": true },
-    { "pays": "ZA", "diffuser": true },
-    { "pays": "CU", "diffuser": true },
-    { "pays": "DO", "diffuser": true },
-    { "pays": "SC", "diffuser": true },
-    { "pays": "DM", "diffuser": true },
-    { "pays": "HT", "diffuser": true },
-    { "pays": "SH", "diffuser": true },
-    { "pays": "ST", "diffuser": true },
-    { "pays": "AW", "diffuser": true },
-    { "pays": "VI", "diffuser": true },
-    { "pays": "VG", "diffuser": true },
-    { "pays": "AI", "diffuser": true },
-    { "pays": "BS", "diffuser": true },
-    { "pays": "AG", "diffuser": true },
-    { "pays": "BB", "diffuser": true },
-    { "pays": "BM", "diffuser": true },
-    { "pays": "KY", "diffuser": true },
-    { "pays": "CW", "diffuser": true },
-    { "pays": "GD", "diffuser": true },
-    { "pays": "JM", "diffuser": true },
-    { "pays": "PR", "diffuser": true },
-    { "pays": "BL", "diffuser": true },
-    { "pays": "KN", "diffuser": true },
-    { "pays": "VC", "diffuser": true },
-    { "pays": "LC", "diffuser": true },
-    { "pays": "BQ", "diffuser": true },
-    { "pays": "MS", "diffuser": true },
-    { "pays": "TT", "diffuser": true },
-    { "pays": "TC", "diffuser": true },
-    { "pays": "MX", "diffuser": true },
-    { "pays": "PA", "diffuser": true },
-    { "pays": "EC", "diffuser": true },
-    { "pays": "NI", "diffuser": true },
-    { "pays": "GT", "diffuser": true },
-    { "pays": "CR", "diffuser": true },
-    { "pays": "SV", "diffuser": true },
-    { "pays": "BZ", "diffuser": true },
-    { "pays": "BR", "diffuser": true },
-    { "pays": "AR", "diffuser": true },
-    { "pays": "CL", "diffuser": true },
-    { "pays": "CO", "diffuser": true },
-    { "pays": "VE", "diffuser": true },
-    { "pays": "PE", "diffuser": true },
-    { "pays": "BO", "diffuser": true },
-    { "pays": "UY", "diffuser": true },
-    { "pays": "PY", "diffuser": true },
-    { "pays": "GY", "diffuser": true },
-    { "pays": "HN", "diffuser": true },
-    { "pays": "SR", "diffuser": true },
-    { "pays": "AU", "diffuser": true },
-    { "pays": "NZ", "diffuser": true },
-    { "pays": "VU", "diffuser": true },
-    { "pays": "FJ", "diffuser": true },
-    { "pays": "HM", "diffuser": true },
-    { "pays": "BV", "diffuser": true },
-    { "pays": "CX", "diffuser": true },
-    { "pays": "CC", "diffuser": true },
-    { "pays": "CK", "diffuser": true },
-    { "pays": "GS", "diffuser": true },
-    { "pays": "KI", "diffuser": true },
-    { "pays": "MH", "diffuser": true },
-    { "pays": "FM", "diffuser": true },
-    { "pays": "NR", "diffuser": true },
-    { "pays": "NU", "diffuser": true },
-    { "pays": "NF", "diffuser": true },
-    { "pays": "PN", "diffuser": true },
-    { "pays": "SB", "diffuser": true },
-    { "pays": "WS", "diffuser": true },
-    { "pays": "TK", "diffuser": true },
-    { "pays": "TO", "diffuser": true },
-    { "pays": "TV", "diffuser": true },
-    { "pays": "WF", "diffuser": true },
-    { "pays": "ID", "diffuser": true },
-    { "pays": "PH", "diffuser": true },
-    { "pays": "PG", "diffuser": true },
-    { "pays": "BN", "diffuser": true },
-    { "pays": "PW", "diffuser": true },
-    { "pays": "TL", "diffuser": true },
-    { "pays": "JP", "diffuser": true },
-    { "pays": "MP", "diffuser": true },
-    { "pays": "KR", "diffuser": true },
-    { "pays": "KP", "diffuser": true },
-    { "pays": "MY", "diffuser": true },
-    { "pays": "SG", "diffuser": true },
-    { "pays": "VN", "diffuser": true },
-    { "pays": "TH", "diffuser": true },
-    { "pays": "KH", "diffuser": true },
-    { "pays": "LA", "diffuser": true },
-    { "pays": "CN", "diffuser": true },
-    { "pays": "HK", "diffuser": true },
-    { "pays": "TW", "diffuser": true },
-    { "pays": "MO", "diffuser": true },
-    { "pays": "MV", "diffuser": true },
-    { "pays": "IN", "diffuser": true },
-    { "pays": "LK", "diffuser": true },
-    { "pays": "BD", "diffuser": true },
-    { "pays": "MM", "diffuser": true },
-    { "pays": "NP", "diffuser": true },
-    { "pays": "BT", "diffuser": true },
-    { "pays": "MN", "diffuser": true }
+    {
+        "pays": "FR",
+        "diffuser": true,
+        "langues": [
+            "fr",
+            "en",
+            "de",
+            "bg",
+            "xx"
+        ]
+    },
+    {
+        "pays": "US",
+        "diffuser": true,
+        "langues": [
+            "en",
+            "ht",
+            "es",
+            "ru"
+        ]
+    },
+    {
+        "pays": "CA",
+        "diffuser": true,
+        "langues": [
+            "fr",
+            "fa",
+            "hi",
+            "en"
+        ]
+    },
+    {
+        "pays": "GB",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "IE",
+        "diffuser": true,
+        "langues": [
+            "ga",
+            "en"
+        ]
+    },
+    {
+        "pays": "BE",
+        "diffuser": true,
+        "langues": [
+            "nl",
+            "fr",
+            "ku"
+        ]
+    },
+    {
+        "pays": "NL",
+        "diffuser": true,
+        "langues": [
+            "nl",
+            "en"
+        ]
+    },
+    {
+        "pays": "LU",
+        "diffuser": true,
+        "langues": [
+            "fr"
+        ]
+    },
+    {
+        "pays": "DE",
+        "diffuser": true,
+        "langues": [
+            "en",
+            "de",
+            "tr",
+            "ru",
+            "ku"
+        ]
+    },
+    {
+        "pays": "AT",
+        "diffuser": true,
+        "langues": [
+            "de"
+        ]
+    },
+    {
+        "pays": "CH",
+        "diffuser": true,
+        "langues": [
+            "fr",
+            "de"
+        ]
+    },
+    {
+        "pays": "ES",
+        "diffuser": true,
+        "langues": [
+            "es",
+            "en"
+        ]
+    },
+    {
+        "pays": "IT",
+        "diffuser": true,
+        "langues": [
+            "de",
+            "it"
+        ]
+    },
+    {
+        "pays": "PT",
+        "diffuser": true,
+        "langues": [
+            "pt"
+        ]
+    },
+    {
+        "pays": "GR",
+        "diffuser": true,
+        "langues": [
+            "sr",
+            "el"
+        ]
+    },
+    {
+        "pays": "CY",
+        "diffuser": true,
+        "langues": [
+            "tr",
+            "el"
+        ]
+    },
+    {
+        "pays": "FI",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "NO",
+        "diffuser": true,
+        "langues": [
+            "no"
+        ]
+    },
+    {
+        "pays": "SE",
+        "diffuser": true,
+        "langues": [
+            "sv",
+            "xx",
+            "en"
+        ]
+    },
+    {
+        "pays": "DK",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "IS",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "LT",
+        "diffuser": true,
+        "langues": [
+            "ru"
+        ]
+    },
+    {
+        "pays": "LV",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "EE",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "PL",
+        "diffuser": true,
+        "langues": [
+            "pl",
+            "en"
+        ]
+    },
+    {
+        "pays": "CZ",
+        "diffuser": true,
+        "langues": [
+            "cs",
+            "ru"
+        ]
+    },
+    {
+        "pays": "SK",
+        "diffuser": true,
+        "langues": [
+            "hu",
+            "sk"
+        ]
+    },
+    {
+        "pays": "HU",
+        "diffuser": true,
+        "langues": [
+            "hu",
+            "en"
+        ]
+    },
+    {
+        "pays": "BG",
+        "diffuser": true,
+        "langues": [
+            "bg"
+        ]
+    },
+    {
+        "pays": "UA",
+        "diffuser": true,
+        "langues": [
+            "uk",
+            "ru"
+        ]
+    },
+    {
+        "pays": "RO",
+        "diffuser": true,
+        "langues": [
+            "ro",
+            "en"
+        ]
+    },
+    {
+        "pays": "HR",
+        "diffuser": true,
+        "langues": [
+            "hr"
+        ]
+    },
+    {
+        "pays": "RS",
+        "diffuser": true,
+        "langues": [
+            "sr"
+        ]
+    },
+    {
+        "pays": "SI",
+        "diffuser": true,
+        "langues": [
+            "sl"
+        ]
+    },
+    {
+        "pays": "BA",
+        "diffuser": true,
+        "langues": [
+            "bs",
+            "sr",
+            "en"
+        ]
+    },
+    {
+        "pays": "MD",
+        "diffuser": true,
+        "langues": [
+            "ro"
+        ]
+    },
+    {
+        "pays": "AL",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "MK",
+        "diffuser": true,
+        "langues": [
+            "mk"
+        ]
+    },
+    {
+        "pays": "ME",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "MC",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "LI",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "AD",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "MT",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "VA",
+        "diffuser": true,
+        "langues": [
+            "it"
+        ]
+    },
+    {
+        "pays": "GI",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "FO",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "SM",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "RU",
+        "diffuser": true,
+        "langues": [
+            "ru",
+            "en"
+        ]
+    },
+    {
+        "pays": "BY",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "AM",
+        "diffuser": true,
+        "langues": [
+            "hy"
+        ]
+    },
+    {
+        "pays": "AZ",
+        "diffuser": true,
+        "langues": [
+            "en"
+        ]
+    },
+    {
+        "pays": "GE",
+        "diffuser": true,
+        "langues": [
+            "ka"
+        ]
+    },
+    {
+        "pays": "KZ",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "TJ",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "KG",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "UZ",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "TM",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "PK",
+        "diffuser": true,
+        "langues": [
+            "ur",
+            "en"
+        ]
+    },
+    {
+        "pays": "AF",
+        "diffuser": true,
+        "langues": [
+            "fa"
+        ]
+    },
+    {
+        "pays": "IR",
+        "diffuser": true,
+        "langues": [
+            "fa"
+        ]
+    },
+    {
+        "pays": "IQ",
+        "diffuser": true,
+        "langues": [
+            "ar",
+            "xx"
+        ]
+    },
+    {
+        "pays": "TR",
+        "diffuser": true,
+        "langues": [
+            "tr",
+            "ar",
+            "en"
+        ]
+    },
+    {
+        "pays": "IL",
+        "diffuser": true,
+        "langues": [
+            "he"
+        ]
+    },
+    {
+        "pays": "LB",
+        "diffuser": true,
+        "langues": [
+            "ar"
+        ]
+    },
+    {
+        "pays": "JO",
+        "diffuser": true,
+        "langues": [
+            "ar"
+        ]
+    },
+    {
+        "pays": "PS",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "SY",
+        "diffuser": true,
+        "langues": [
+            "ku"
+        ]
+    },
+    {
+        "pays": "QA",
+        "diffuser": true,
+        "langues": [
+            "ar"
+        ]
+    },
+    {
+        "pays": "AE",
+        "diffuser": true,
+        "langues": [
+            "ar",
+            "en"
+        ]
+    },
+    {
+        "pays": "OM",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "BH",
+        "diffuser": true,
+        "langues": [
+            "ar"
+        ]
+    },
+    {
+        "pays": "KW",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "SA",
+        "diffuser": true,
+        "langues": [
+            "ar"
+        ]
+    },
+    {
+        "pays": "YE",
+        "diffuser": true,
+        "langues": [
+            "ar"
+        ]
+    },
+    {
+        "pays": "ER",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "DJ",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "ET",
+        "diffuser": true,
+        "langues": [
+            "om"
+        ]
+    },
+    {
+        "pays": "EG",
+        "diffuser": true,
+        "langues": [
+            "ar"
+        ]
+    },
+    {
+        "pays": "LY",
+        "diffuser": true,
+        "langues": [
+            "ar"
+        ]
+    },
+    {
+        "pays": "DZ",
+        "diffuser": true,
+        "langues": [
+            "ar"
+        ]
+    },
+    {
+        "pays": "TN",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "MA",
+        "diffuser": true,
+        "langues": [
+            "ar"
+        ]
+    },
+    {
+        "pays": "MR",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "ML",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "SN",
+        "diffuser": true,
+        "langues": [
+            "wo"
+        ]
+    },
+    {
+        "pays": "CV",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "GM",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "GW",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "GN",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "SL",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "LR",
+        "diffuser": true,
+        "langues": [
+            "en"
+        ]
+    },
+    {
+        "pays": "CI",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "BF",
+        "diffuser": true,
+        "langues": [
+            "fr"
+        ]
+    },
+    {
+        "pays": "GH",
+        "diffuser": true,
+        "langues": [
+            "en"
+        ]
+    },
+    {
+        "pays": "TG",
+        "diffuser": true,
+        "langues": [
+            "fr"
+        ]
+    },
+    {
+        "pays": "BJ",
+        "diffuser": true,
+        "langues": [
+            "fr"
+        ]
+    },
+    {
+        "pays": "CM",
+        "diffuser": true,
+        "langues": [
+            "fr"
+        ]
+    },
+    {
+        "pays": "NE",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "NG",
+        "diffuser": true,
+        "langues": [
+            "en"
+        ]
+    },
+    {
+        "pays": "TD",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "SD",
+        "diffuser": true,
+        "langues": [
+            "ar"
+        ]
+    },
+    {
+        "pays": "SS",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "CF",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "GQ",
+        "diffuser": true,
+        "langues": [
+            "es"
+        ]
+    },
+    {
+        "pays": "GA",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "CG",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "CD",
+        "diffuser": true,
+        "langues": [
+            "fr"
+        ]
+    },
+    {
+        "pays": "RW",
+        "diffuser": true,
+        "langues": [
+            "rw"
+        ]
+    },
+    {
+        "pays": "BI",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "UG",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "KE",
+        "diffuser": true,
+        "langues": [
+            "en"
+        ]
+    },
+    {
+        "pays": "SO",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "TZ",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "AO",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "ZM",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "MW",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "MG",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "MU",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "KM",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "MZ",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "ZW",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "BW",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "NA",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "LS",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "SZ",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "ZA",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "CU",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "DO",
+        "diffuser": true,
+        "langues": [
+            "es"
+        ]
+    },
+    {
+        "pays": "SC",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "DM",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "HT",
+        "diffuser": true,
+        "langues": [
+            "fr"
+        ]
+    },
+    {
+        "pays": "SH",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "ST",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "AW",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "VI",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "VG",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "AI",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "BS",
+        "diffuser": true,
+        "langues": [
+            "en"
+        ]
+    },
+    {
+        "pays": "AG",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "BB",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "BM",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "KY",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "CW",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "GD",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "JM",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "PR",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "BL",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "KN",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "VC",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "LC",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "BQ",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "MS",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "TT",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "TC",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "MX",
+        "diffuser": true,
+        "langues": [
+            "es"
+        ]
+    },
+    {
+        "pays": "PA",
+        "diffuser": true,
+        "langues": [
+            "es"
+        ]
+    },
+    {
+        "pays": "EC",
+        "diffuser": true,
+        "langues": [
+            "es"
+        ]
+    },
+    {
+        "pays": "NI",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "GT",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "CR",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "SV",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "BZ",
+        "diffuser": true,
+        "langues": [
+            "en"
+        ]
+    },
+    {
+        "pays": "BR",
+        "diffuser": true,
+        "langues": [
+            "pt"
+        ]
+    },
+    {
+        "pays": "AR",
+        "diffuser": true,
+        "langues": [
+            "es"
+        ]
+    },
+    {
+        "pays": "CL",
+        "diffuser": true,
+        "langues": [
+            "es"
+        ]
+    },
+    {
+        "pays": "CO",
+        "diffuser": true,
+        "langues": [
+            "es"
+        ]
+    },
+    {
+        "pays": "VE",
+        "diffuser": true,
+        "langues": [
+            "es",
+            "en"
+        ]
+    },
+    {
+        "pays": "PE",
+        "diffuser": true,
+        "langues": [
+            "es"
+        ]
+    },
+    {
+        "pays": "BO",
+        "diffuser": true,
+        "langues": [
+            "es"
+        ]
+    },
+    {
+        "pays": "UY",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "PY",
+        "diffuser": true,
+        "langues": [
+            "es"
+        ]
+    },
+    {
+        "pays": "GY",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "HN",
+        "diffuser": true,
+        "langues": [
+            "es"
+        ]
+    },
+    {
+        "pays": "SR",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "AU",
+        "diffuser": true,
+        "langues": [
+            "en"
+        ]
+    },
+    {
+        "pays": "NZ",
+        "diffuser": true,
+        "langues": [
+            "en"
+        ]
+    },
+    {
+        "pays": "VU",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "FJ",
+        "diffuser": true,
+        "langues": [
+            "en"
+        ]
+    },
+    {
+        "pays": "HM",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "BV",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "CX",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "CC",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "CK",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "GS",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "KI",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "MH",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "FM",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "NR",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "NU",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "NF",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "PN",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "SB",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "WS",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "TK",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "TO",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "TV",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "WF",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "ID",
+        "diffuser": true,
+        "langues": [
+            "id",
+            "en"
+        ]
+    },
+    {
+        "pays": "PH",
+        "diffuser": true,
+        "langues": [
+            "en"
+        ]
+    },
+    {
+        "pays": "PG",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "BN",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "PW",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "TL",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "JP",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "MP",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "KR",
+        "diffuser": true,
+        "langues": [
+            "ko",
+            "en"
+        ]
+    },
+    {
+        "pays": "KP",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "MY",
+        "diffuser": true,
+        "langues": [
+            "ms"
+        ]
+    },
+    {
+        "pays": "SG",
+        "diffuser": true,
+        "langues": [
+            "en"
+        ]
+    },
+    {
+        "pays": "VN",
+        "diffuser": true,
+        "langues": [
+            "vi"
+        ]
+    },
+    {
+        "pays": "TH",
+        "diffuser": true,
+        "langues": [
+            "th"
+        ]
+    },
+    {
+        "pays": "KH",
+        "diffuser": true,
+        "langues": [
+            "km"
+        ]
+    },
+    {
+        "pays": "LA",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "CN",
+        "diffuser": true,
+        "langues": [
+            "en",
+            "zh"
+        ]
+    },
+    {
+        "pays": "HK",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "TW",
+        "diffuser": true,
+        "langues": [
+            "zh"
+        ]
+    },
+    {
+        "pays": "MO",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "MV",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "IN",
+        "diffuser": true,
+        "langues": [
+            "gu",
+            "hi",
+            "en",
+            "pa",
+            "ps"
+        ]
+    },
+    {
+        "pays": "LK",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "BD",
+        "diffuser": true,
+        "langues": [
+            "bn"
+        ]
+    },
+    {
+        "pays": "MM",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "NP",
+        "diffuser": true,
+        "langues": [
+            "ne"
+        ]
+    },
+    {
+        "pays": "BT",
+        "diffuser": true,
+        "langues": []
+    },
+    {
+        "pays": "MN",
+        "diffuser": true,
+        "langues": [
+            "mn"
+        ]
+    }
 ]

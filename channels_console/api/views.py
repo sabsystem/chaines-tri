@@ -52,9 +52,22 @@ def equivalences_categorie(request, categorie: str):
 
 
 def pays(request):
-    # Ouverture du fichier json
+    # Ouverture des fichiers json
     with open("../res/liste_pays.json", "r") as json_file:
-        liste_pays: list[str] = json.load(json_file)
+        liste_pays: list[dict] = json.load(json_file)
+
+    with open("../gen/association.json", "r") as json_file:
+        liste_chaines: list[dict] = json.load(json_file)
+
+    for p in liste_pays:
+        for chaine in liste_chaines:
+            if p["pays"] == chaine["pays"]:
+                if chaine["langue"] not in p["langues"]:
+                    p["langues"].append(chaine["langue"])
+
+    # Enregistrement des pays actuels
+    with open("../res/liste_pays.json", "w") as outfile:
+        outfile.write(json.dumps(liste_pays, indent=4))
 
     # Envoi de la liste de pays à jour
     return JsonResponse(liste_pays, safe=False)
@@ -412,7 +425,7 @@ def enregistrer_pays(request):
         data = json.loads(request.body)
         informations = data.get("pays")
 
-        liste_pays: list[str] = []
+        liste_pays: list[dict] = []
 
         # Ouverture du fichier json
         with open("../gen/association.json", "r") as json_file:
@@ -421,8 +434,14 @@ def enregistrer_pays(request):
         for information in informations:
             nom_chaine = information["chaine"]
             nom_pays = information["pays"]
+            langues_pays = information["langues"]
+            diffuser_pays = information["diffuser"]
 
-            liste_pays.append(nom_pays)
+            liste_pays.append({
+                "pays": nom_pays,
+                "diffuser": diffuser_pays,
+                "langues": langues_pays,
+            })
 
             for chaine in liste_chaines:
                 if chaine["nom_mumu"] == nom_chaine:

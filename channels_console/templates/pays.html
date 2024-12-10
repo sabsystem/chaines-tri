@@ -36,7 +36,7 @@
                 <tbody id="liste-langues"></tbody>
             </table>
 
-            <button class="bouton" id="appliquer-modifications" onclick="creer_client('ordre-langues')">
+            <button class="bouton" id="appliquer-modifications" onclick="appliquer_modifications('ordre-langues')">
                 Appliquer Modifications
             </button>
         </div>
@@ -96,7 +96,7 @@
                     <td id="nombre_chaines">{{ p.pays|nombre_chaines_pays:chaines }}</td>
                     <td id="nombre_radios">{{ p.pays|nombre_radios_pays:chaines }}</td>
                     <td id="langues" ondblclick="ouvrir_formulaire_langues('ordre-langues', '{{ p.pays }}')">
-                        {% for langue in p.pays|liste_langues_pays:chaines %}
+                        {% for langue in p.langues %}
                             <span class="vignette">{{ langue }}</span>
                         {% endfor %}
                     </td>

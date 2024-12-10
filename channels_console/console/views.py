@@ -42,6 +42,12 @@ def pays(request):
     with open("../res/liste_pays.json", "r") as json_file:
         liste_pays = json.load(json_file)
 
+    for p in liste_pays:
+        for chaine in liste_chaines:
+            if p["pays"] == chaine["pays"]:
+                if chaine["langue"] not in p["langues"]:
+                    p["langues"].append(chaine["langue"])
+
     # Afficher la page `pays.html` et transmettre la liste des pays
     return render(request, 'pays.html', {
         'pays': liste_pays, 'chaines': liste_chaines
