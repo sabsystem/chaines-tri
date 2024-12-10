@@ -464,3 +464,19 @@ def enregistrer_serveurs(request):
         return JsonResponse(liste_serveurs, safe=False)
     else:
         return JsonResponse({"error": "Invalid request method"}, status=400)
+
+
+@csrf_exempt
+def chaines_modifier(request):
+    if request.method == "POST":
+        data = json.loads(request.body)
+        nouvelle_liste_chaines = data.get("chaines")
+
+        # Ecriture des nouvelles informations
+        with open("../gen/association.json", "w") as outfile:
+            outfile.write(json.dumps(nouvelle_liste_chaines, indent=4))
+
+        # Envoi de la nouvelle liste de chaines
+        return JsonResponse(nouvelle_liste_chaines, safe=False)
+    else:
+        return JsonResponse({"error": "Invalid request method"}, status=400)

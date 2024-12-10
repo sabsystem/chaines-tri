@@ -136,9 +136,19 @@ async function fusionner_occurrences(id_formulaire) {
     const chaineAssocierInfos = listeChaines.find(c => c.nom_mumu === chaineAssocier);
     const iptvAssocierInfos = listeChaines.find(c => c.id === iptvAssocier);
 
+    console.log(chaineAssocierInfos);
+
     if (chaineAssocierInfos !== undefined && iptvAssocierInfos !== undefined) iptvAssocierInfos.occurrences = iptvAssocierInfos.occurrences.concat(chaineAssocierInfos.occurrences);
 
-    listeChaines.pop(chaineAssocierInfos);
+    listeChaines.splice(listeChaines.indexOf(chaineAssocierInfos), 1);
+
+    await fetch("/api/chaines/modifier", {
+        method: "POST", headers: {
+            "Content-Type": "application/json"
+        }, body: JSON.stringify({chaines: listeChaines})
+    });
+
+    window.location.reload();
 }
 
 async function ouvrir_formulaire_occurrences(formulaire_id, chaine) {

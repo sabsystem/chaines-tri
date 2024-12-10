@@ -27,4 +27,5 @@ urlpatterns = [
     path("serveurs/enregistrer", views.enregistrer_serveurs, name="enregistrer_serveurs"),
     path("occurrences", views.occurrences, name="occurrences"),
     path("occurrences/modifier", views.occurrences_modifier, name="occurrences_modifier"),
+    path("chaines/modifier", views.chaines_modifier, name="chaines_modifier"),
 ]
