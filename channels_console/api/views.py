@@ -492,6 +492,8 @@ def chaines_enregistrer(request):
         with open("../gen/association.json", "r") as json_file:
             liste_chaines: list[dict] = json.load(json_file)
 
+        nouvelles_chaines = []
+
         for nouvelle_chaine in nouvelle_liste_chaines:
             chaine = next((c for c in liste_chaines if c["nom_mumu"] == nouvelle_chaine["nom_mumu"]), None)
 
@@ -510,11 +512,13 @@ def chaines_enregistrer(request):
             chaine["forcer_non_diffusion"] = nouvelle_chaine["forcer_non_diffusion"] == "True"
             chaine["a_diffuser"] = nouvelle_chaine["a_diffuser"] == "True"
 
+            nouvelles_chaines.append(chaine)
+
         # Ecriture des nouvelles informations
         with open("../gen/association.json", "w") as outfile:
-            outfile.write(json.dumps(liste_chaines, indent=4))
+            outfile.write(json.dumps(nouvelles_chaines, indent=4))
 
         # Envoi de la nouvelle liste de chaines
-        return JsonResponse(liste_chaines, safe=False)
+        return JsonResponse(nouvelles_chaines, safe=False)
     else:
         return JsonResponse({"error": "Invalid request method"}, status=400)
