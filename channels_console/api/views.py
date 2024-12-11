@@ -444,7 +444,7 @@ def enregistrer_pays(request):
             })
 
             for chaine in liste_chaines:
-                if chaine["nom_mumu"] == nom_chaine:
+                if chaine["nom_mumu"] == nom_chaine and nom_chaine != "None":
                     chaine["chaine_par_defaut"].append(nom_pays)
 
                 elif nom_pays in chaine["chaine_par_defaut"]:
