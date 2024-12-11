@@ -68,3 +68,13 @@ async function ajouter_categorie(id_formulaire) {
 
     window.location.reload();
 }
+
+async function trier() {
+    await fetch(`/api/categories/trier`, {
+        method: "POST", headers: {
+            "Content-Type": "application/json"
+        }
+    });
+
+    alert("Les chaînes ont été triées par catégorie.");
+}
