@@ -561,6 +561,8 @@ def trier_categories(request):
                     nouvelles_chaines.append(chaine)
                     liste_chaines.remove(chaine)
 
+        nouvelles_chaines.extend(liste_chaines)
+
         # Ecriture des nouvelles informations
         with open("../gen/association.json", "w") as outfile:
             outfile.write(json.dumps(nouvelles_chaines, indent=4))
@@ -589,6 +591,8 @@ def trier_pays(request):
                     if p["pays"] == chaine["pays"] and langue == chaine["langue"]:
                         nouvelles_chaines.append(chaine)
                         liste_chaines.remove(chaine)
+
+        nouvelles_chaines.extend(liste_chaines)
 
         # Ecriture des nouvelles informations
         with open("../gen/association.json", "w") as outfile:
