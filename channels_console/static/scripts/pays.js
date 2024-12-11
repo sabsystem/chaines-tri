@@ -69,3 +69,13 @@ async function enregistrer() {
 
     window.location.reload();
 }
+
+async function trier() {
+    await fetch(`/api/pays/trier`, {
+        method: "POST", headers: {
+            "Content-Type": "application/json"
+        }
+    });
+
+    alert("Les chaînes ont été triées par pays et langues.");
+}

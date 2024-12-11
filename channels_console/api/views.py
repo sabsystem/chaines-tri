@@ -569,3 +569,32 @@ def trier_categories(request):
         return JsonResponse(nouvelles_chaines, safe=False)
     else:
         return JsonResponse({"error": "Invalid request method"}, status=400)
+
+
+@csrf_exempt
+def trier_pays(request):
+    if request.method == "POST":
+        nouvelles_chaines: list[dict] = []
+
+        # Ouverture des fichiers json
+        with open("../gen/association.json", "r") as json_file:
+            liste_chaines: list[dict] = json.load(json_file)
+
+        with open("../res/liste_pays.json", "r") as json_file:
+            liste_pays: list[dict] = json.load(json_file)
+
+        for p in liste_pays:
+            for langue in p["langues"]:
+                for chaine in liste_chaines:
+                    if p["pays"] == chaine["pays"] and langue == chaine["langue"]:
+                        nouvelles_chaines.append(chaine)
+                        liste_chaines.remove(chaine)
+
+        # Ecriture des nouvelles informations
+        with open("../gen/association.json", "w") as outfile:
+            outfile.write(json.dumps(nouvelles_chaines, indent=4))
+
+        # Envoi de la nouvelle liste de chaines
+        return JsonResponse(nouvelles_chaines, safe=False)
+    else:
+        return JsonResponse({"error": "Invalid request method"}, status=400)

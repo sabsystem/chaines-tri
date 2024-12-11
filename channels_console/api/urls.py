@@ -23,6 +23,7 @@ urlpatterns = [
     path('categories/supprimer', views.suppression_categorie, name='suppression_categorie'),
     path('categories/ajouter', views.ajout_categorie, name='ajout_categorie'),
     path('categories/trier', views.trier_categories, name='trier_categories'),
+    path('pays/trier', views.trier_pays, name='trier_pays'),
     path('telecharger_csv/<str:client_nom>/', views.telecharger_csv, name='telecharger_csv'),
     path('pays/enregistrer', views.enregistrer_pays, name='enregistrer_pays'),
     path("serveurs/enregistrer", views.enregistrer_serveurs, name="enregistrer_serveurs"),
