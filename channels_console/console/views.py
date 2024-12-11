@@ -3,6 +3,11 @@ import json
 from django.shortcuts import render
 
 
+def accueil(request):
+    # On affiche la page accueil.html
+    return render(request, 'accueil.html')
+
+
 def chaines(request):
     # Ouverture des fichiers json
     with open("../gen/association.json", "r") as json_file:
